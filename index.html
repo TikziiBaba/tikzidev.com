@@ -28,10 +28,20 @@
       white-space: pre;
       overflow: hidden;
     }
+
+    #video-container {
+      display: none;
+    }
   </style>
 </head>
 <body>
   <div id="text"></div>
+  <div id="video-container">
+    <iframe id="youtube-video" width="560" height="315" 
+            src="https://www.youtube.com/watch?v=Qc7_zRjH808" 
+            frameborder="0" allow="accelerometer; autoplay; 
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 
   <script>
     // Animasyonlu Yazı
@@ -44,6 +54,9 @@
         textElement.textContent += text[index];
         index++;
         setTimeout(typeText, 100); // Harfler arasında 100ms gecikme
+      } else {
+        // Animasyon tamamlandığında videoyu göster
+        document.getElementById("video-container").style.display = "block";
       }
     }
 
