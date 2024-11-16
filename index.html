@@ -28,33 +28,10 @@
       white-space: pre;
       overflow: hidden;
     }
-
-    #video-container {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: black;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #youtube-video {
-      width: 100%;
-      height: 100%;
-    }
   </style>
 </head>
 <body>
   <div id="text"></div>
-  <div id="video-container">
-    <iframe id="youtube-video" 
-            src="https://www.youtube.com/embed/watch?v=Qc7_zRjH808" 
-            frameborder="0" allow="accelerometer; autoplay; 
-            encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
 
   <script>
     // Animasyonlu Yazı
@@ -67,10 +44,6 @@
         textElement.textContent += text[index];
         index++;
         setTimeout(typeText, 100); // Harfler arasında 100ms gecikme
-      } else {
-        // Animasyon tamamlandığında yazıları sil ve videoyu tam ekran göster
-        document.body.removeChild(textElement);
-        document.getElementById("video-container").style.display = "flex";
       }
     }
 
