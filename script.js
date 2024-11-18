@@ -1,5 +1,5 @@
 // Harf harf yazılacak metin
-const initialText = "bekir@tikzi.dev:~$ baslat.sh&"; // Yeni başlangıç yazısı
+const initialText = "bekir@tikzi.dev:~$ baslat.sh& to start.sh~$"; // Yeni başlangıç yazısı
 
 // İlk animasyon için hedef
 const animatedText = document.getElementById("animatedText");
