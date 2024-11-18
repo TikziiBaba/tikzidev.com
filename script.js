@@ -25,9 +25,25 @@ function typeWriter() {
         // Animasyon tamamlandığında bekleyip Matrix animasyonunu başlat
         setTimeout(() => {
             document.getElementById("initialAnimation").style.display = "none"; // İlk animasyonu gizle
-            startMatrixAnimation(); // Matrix animasyonu başlat
+            showPressEnterMessage(); // Enter mesajını göster
         }, 1000); // 1 saniye bekle
     }
+}
+
+// "Enter'e basın" mesajını göster
+function showPressEnterMessage() {
+    const pressEnterMessage = document.createElement("div");
+    pressEnterMessage.textContent = "Press Enter to continue...";
+    pressEnterMessage.classList.add("press-enter-message"); // CSS sınıfı ekle
+    document.body.appendChild(pressEnterMessage); // Mesajı ekle
+
+    // Kullanıcı "Enter" tuşuna bastığında devam et
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            pressEnterMessage.style.display = "none"; // Enter mesajını gizle
+            startMatrixAnimation(); // Matrix animasyonunu başlat
+        }
+    });
 }
 
 // Matrix animasyonu başlat
