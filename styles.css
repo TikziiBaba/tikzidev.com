@@ -7,6 +7,10 @@ body {
     font-family: monospace; /* Kod stilinde bir yazı tipi */
     height: 100vh;
     overflow: hidden; /* Ekran dışına taşan öğeleri gizle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 /* İlk Animasyon için Başlangıç Yazısı */
@@ -90,4 +94,44 @@ body {
     margin: 0;
     color: white; /* Beyaz renk */
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Hafif gölge */
+}
+
+/* Enter tuşuna basın mesajı için stil */
+.press-enter-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    text-align: center;
+    z-index: 30; /* Diğer öğelerin üstünde olsun */
+}
+
+/* Responsive tasarım - Mobil cihazlar için */
+@media (max-width: 600px) {
+    body {
+        font-size: 18px; /* Küçük ekranlar için yazı boyutunu küçült */
+    }
+
+    #animatedText {
+        font-size: 20px; /* Başlangıç yazısını biraz daha küçült */
+    }
+
+    #overlayText h1 {
+        font-size: 2.5em; /* Başlık boyutunu küçült */
+    }
+
+    #overlayText h2 {
+        font-size: 1.5em; /* Alt yazıyı küçült */
+    }
+
+    .press-enter-message {
+        font-size: 18px; /* "Enter'e basın" mesajını küçült */
+        padding: 8px; /* Daha küçük buton */
+    }
 }
