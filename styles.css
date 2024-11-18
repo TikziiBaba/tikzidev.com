@@ -37,12 +37,12 @@ body {
     overflow: hidden;
     pointer-events: none; /* Yazıya tıklanmasını engelle */
     opacity: 0; /* Başlangıçta görünmesin */
-    background-image: url('image.png'); /* Arka plan resmi ekleme */
-    background-size: cover; /* Resmin ekranı tam kaplamasını sağla */
-    background-position: center; /* Resmin merkezde durmasını sağla */
-    background-attachment: fixed; /* Arka plan resminin sabit durmasını sağla */
+    background-image: url('h2.gif'); /* Burada arka plan resmini GIF ile değiştirdik */
+    background-size: cover; /* GIF'in ekranı tam kaplamasını sağla */
+    background-position: center; /* GIF'in merkezde durmasını sağla */
+    background-attachment: fixed; /* Arka plan GIF'inin sabit durmasını sağla */
     transition: opacity 1s ease; /* Geçiş efektini ekledim */
-    z-index: 5; /* Matrix yazılarının arka planda kalmaması için */
+    z-index: 10; /* Matrix yazılarının arka planda kalmaması için */
 }
 
 /* Matrix yazılarının her bir satırı */
@@ -53,7 +53,7 @@ body {
     font-size: 20px;
     white-space: nowrap;
     animation: fall 3s linear infinite; /* Sürekli akan animasyon */
-    z-index: 10; /* Matrix yazılarının görünmesini sağlamak için daha yüksek z-index */
+    z-index: 15; /* Matrix yazılarının görünmesini sağlamak için daha yüksek z-index */
 }
 
 /* Matrix yazıları düşüş animasyonu */
