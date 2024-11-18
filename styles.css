@@ -42,7 +42,7 @@ body {
     background-position: center; /* Resmin merkezde durmasını sağla */
     background-attachment: fixed; /* Arka plan resminin sabit durmasını sağla */
     transition: opacity 1s ease; /* Geçiş efektini ekledim */
-    z-index: 10; /* Matrix yazılarının arka planda kalmaması için */
+    z-index: 5; /* Matrix yazılarının arka planda kalmaması için */
 }
 
 /* Matrix yazılarının her bir satırı */
@@ -53,7 +53,7 @@ body {
     font-size: 20px;
     white-space: nowrap;
     animation: fall 3s linear infinite; /* Sürekli akan animasyon */
-    z-index: 15; /* Matrix yazılarının görünmesini sağlamak için daha yüksek z-index */
+    z-index: 10; /* Matrix yazılarının görünmesini sağlamak için daha yüksek z-index */
 }
 
 /* Matrix yazıları düşüş animasyonu */
