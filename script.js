@@ -33,17 +33,28 @@ function typeWriter() {
 // "Enter'e basın" mesajını göster
 function showPressEnterMessage() {
     const pressEnterMessage = document.createElement("div");
-    pressEnterMessage.textContent = "Press Enter to continue...";
+    pressEnterMessage.textContent = "Press Enter or click to continue...";
     pressEnterMessage.classList.add("press-enter-message"); // CSS sınıfı ekle
     document.body.appendChild(pressEnterMessage); // Mesajı ekle
 
-    // Kullanıcı "Enter" tuşuna bastığında devam et
-    document.addEventListener("keydown", function(event) {
+    // "Enter" veya mouse tıklama olaylarını dinle
+    function continueHandler() {
+        pressEnterMessage.style.display = "none"; // Mesajı gizle
+        startMatrixAnimation(); // Matrix animasyonunu başlat
+        document.removeEventListener("keydown", keyHandler);
+        document.removeEventListener("click", continueHandler);
+    }
+
+    // Enter tuşu için olay dinleyici
+    function keyHandler(event) {
         if (event.key === "Enter") {
-            pressEnterMessage.style.display = "none"; // Enter mesajını gizle
-            startMatrixAnimation(); // Matrix animasyonunu başlat
+            continueHandler();
         }
-    });
+    }
+
+    // Dinleyicileri ekle
+    document.addEventListener("keydown", keyHandler);
+    document.addEventListener("click", continueHandler);
 }
 
 // Matrix animasyonu başlat
