@@ -112,6 +112,19 @@ body {
     z-index: 30; /* Diğer öğelerin üstünde olsun */
 }
 
+/* bekir.dev yazısı için stil ve gölge efekti */
+#bekirText {
+    font-size: 2em; /* Yazı boyutunu belirleyin */
+    color: white; /* Beyaz yazı rengi */
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Hafif etraf gölgesi */
+    position: absolute;
+    top: 75%; /* Yüksekliği belirleyin */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20; /* Ön planda olmasını sağlamak için */
+}
+
 /* Responsive tasarım - Mobil cihazlar için */
 @media (max-width: 600px) {
     body {
