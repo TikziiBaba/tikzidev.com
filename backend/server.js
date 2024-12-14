@@ -1,32 +1,23 @@
 const express = require('express');
 const http = require('http');
-const { Server } = require('socket.io');
+const socketIo = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
+const io = socketIo(server);
 
-// Ana sayfaya basit bir HTML dosyası göndermek
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-});
+app.use(express.static('public'));
 
-// WebSocket bağlantıları
 io.on('connection', (socket) => {
-    console.log('Bir kullanıcı bağlandı.');
-
-    // Mesajları dinleme ve yayınlama
-    socket.on('chat message', (msg) => {
-        io.emit('chat message', msg); // Mesajı herkese gönder
-    });
-
-    // Kullanıcı ayrıldığında
-    socket.on('disconnect', () => {
-        console.log('Bir kullanıcı ayrıldı.');
-    });
+  console.log('a user connected');
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg);
+  });
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
 });
 
-// Sunucuyu başlatma
 server.listen(3000, () => {
-    console.log('Sunucu 3000 portunda çalışıyor.');
+  console.log('listening on *:3000');
 });
