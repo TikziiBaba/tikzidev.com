@@ -1,27 +1,20 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bekir</title> <!-- Tarayıcı Başlığı -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resim Geçişi</title>
+  <link rel="icon" href="icon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div id="image-container">
+    <img src="resim1.jpg" class="image" id="image1">
+    <img src="resim2.jpg" class="image" id="image2" style="display: none;">
+    <img src="resim3.jpg" class="image" id="image3" style="display: none;">
+  </div>
+  <button id="next-btn">Sonraki</button>
 
-    <!-- Başlangıç Animasyonu -->
-    <div id="initialAnimation">
-        <div id="animatedText"></div>
-    </div>
-
-    <!-- Matrix Yazı Efekti -->
-    <div id="matrixAnimation">
-        <!-- Bekir.dev yazısı -->
-        <div id="overlayText">
-            <h1>Bekir.dev</h1>
-            <h2>Database Developer</h2>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
