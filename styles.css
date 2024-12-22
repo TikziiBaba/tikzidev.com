@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', monospace;
+}
+
+#terminal {
+    width: 80%;
+    height: 60%;
+    border: 2px solid white;
+    padding: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+pre {
+    margin: 0;
+    font-weight: bold;
+    flex-grow: 1;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.input-container {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#input {
+    background: black;
+    color: white;
+    border: 2px solid white; /* Kutu görünümü için sınır eklenir */
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Courier New', monospace; /* Yazı fontunu aynı yapalım */
+    padding: 5px;
+    width: 100%;
+}
+/* Buton stilini ekleyelim */
+#newTerminalButton {
+    position: fixed; /* Sayfanın sol tarafında sabit duracak */
+    top: 20px; /* Üstten 20px uzaklık */
+    left: 20px; /* Soldan 20px uzaklık */
+    padding: 10px 20px;
+    background-color: #262528;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
+}
+
+#newTerminalButton:hover {
+    background-color: #212321;
+}
