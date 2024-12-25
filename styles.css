@@ -1,65 +1,62 @@
+/* Genel ayarlar */
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    font-family: monospace;
+    background-color: #000; /* Arka plan siyah */
+    color: #0f0; /* Yazılar neon yeşil */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    color: white;
-    font-family: 'Courier New', monospace;
+    height: 100vh;
 }
 
-#terminal {
+/* Terminal kutusu */
+.container {
     width: 80%;
+    max-width: 800px;
     height: 60%;
-    border: 2px solid white;
-    padding: 20px;
-    overflow-y: auto;
-    box-sizing: border-box;
+    background-color: #111; /* Terminal kutusu rengi */
+    border: 2px solid #0f0; /* Neon yeşil çerçeve */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 20px #0f0;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
-pre {
-    margin: 0;
-    font-weight: bold;
+/* Terminal çıktıları */
+.terminal {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+#output {
     flex-grow: 1;
     white-space: pre-wrap;
     word-wrap: break-word;
 }
 
-.input-container {
-    width: 100%;
-    margin-top: 10px;
+/* Girdi satırı */
+.input-line {
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    margin-right: 5px;
 }
 
 #input {
-    background: black;
-    color: white;
-    border: 2px solid white; /* Kutu görünümü için sınır eklenir */
-    outline: none;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: 'Courier New', monospace; /* Yazı fontunu aynı yapalım */
-    padding: 5px;
-    width: 100%;
-}
-/* Buton stilini ekleyelim */
-#newTerminalButton {
-    position: fixed; /* Sayfanın sol tarafında sabit duracak */
-    top: 20px; /* Üstten 20px uzaklık */
-    left: 20px; /* Soldan 20px uzaklık */
-    padding: 10px 20px;
-    background-color: #262528;
-    color: white;
+    background: none;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    color: #0f0;
     font-size: 16px;
-    z-index: 10;
-}
-
-#newTerminalButton:hover {
-    background-color: #212321;
+    outline: none;
+    width: 100%;
+    caret-color: #0f0;
 }
