@@ -1,26 +1,27 @@
-/* Genel ayarlar */
+/* Genel gövde ayarları */
 body {
     margin: 0;
     padding: 0;
-    font-family: monospace;
-    background-color: #000; /* Arka plan siyah */
-    color: #0f0; /* Yazılar neon yeşil */
+    font-family: 'Courier New', monospace; /* Terminal tarzı font */
+    background-color: #000; /* Arka plan tamamen siyah */
+    color: #fff; /* Yazılar beyaz */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* Tüm ekran yüksekliğini kapla */
+    overflow: hidden;
 }
 
-/* Terminal kutusu */
+/* Terminal kutucuğu */
 .container {
-    width: 80%;
-    max-width: 800px;
-    height: 60%;
-    background-color: #111; /* Terminal kutusu rengi */
-    border: 2px solid #0f0; /* Neon yeşil çerçeve */
-    border-radius: 10px;
+    width: 80%; /* Genişlik */
+    max-width: 800px; /* Maksimum genişlik */
+    height: 60%; /* Yükseklik */
+    background-color: #111; /* Terminal kutusu koyu gri */
+    border: 2px solid #fff; /* Beyaz çerçeve */
+    border-radius: 10px; /* Hafif yuvarlatılmış köşeler */
     padding: 10px;
-    box-shadow: 0 0 20px #0f0;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Hafif parlaklık efekti */
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -37,8 +38,9 @@ body {
 
 #output {
     flex-grow: 1;
-    white-space: pre-wrap;
+    white-space: pre-wrap; /* Uzun yazılar için düzgün satır kaydırma */
     word-wrap: break-word;
+    color: #fff; /* Terminal içeriği beyaz */
 }
 
 /* Girdi satırı */
@@ -49,14 +51,15 @@ body {
 
 .prompt {
     margin-right: 5px;
+    color: #fff; /* Prompt yazısı beyaz */
 }
 
 #input {
     background: none;
     border: none;
-    color: #0f0;
+    color: #fff; /* Giriş alanı beyaz */
     font-size: 16px;
     outline: none;
     width: 100%;
-    caret-color: #0f0;
+    caret-color: #fff; /* İmleç beyaz */
 }
