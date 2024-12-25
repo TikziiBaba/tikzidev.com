@@ -1,67 +1,34 @@
-// HTML'ye terminal elemanlarını ekle
-const body = document.body;
+const inputField = document.getElementById('input');
+const outputDiv = document.getElementById('output');
 
-// Terminal kutusu
-const terminalContainer = document.createElement('div');
-terminalContainer.classList.add('terminal-container');
-body.appendChild(terminalContainer);
+let commandHistory = [];
 
-// Terminal çıktı alanı
-const terminalOutput = document.createElement('div');
-terminalOutput.classList.add('terminal-output');
-terminalContainer.appendChild(terminalOutput);
-
-// Terminal giriş alanı
-const inputLine = document.createElement('div');
-inputLine.classList.add('input-line');
-terminalContainer.appendChild(inputLine);
-
-// Prompt
-const prompt = document.createElement('span');
-prompt.classList.add('prompt');
-prompt.textContent = '>';
-inputLine.appendChild(prompt);
-
-// Giriş kutusu
-const inputField = document.createElement('input');
-inputField.type = 'text';
-inputField.id = 'input';
-inputLine.appendChild(inputField);
-
-// Giriş işlemleri
-inputField.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
+inputField.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
         const userInput = inputField.value.trim();
         if (userInput) {
-            // Kullanıcı girişini terminale yazdır
-            writeToTerminal(`> ${userInput}`);
-            handleCommand(userInput);
+            addToOutput(`> ${userInput}`);
+            processCommand(userInput);
         }
-        inputField.value = ''; // Giriş alanını temizle
+        inputField.value = '';
     }
 });
 
-// Terminale yazı ekleme
-function writeToTerminal(text) {
+function addToOutput(text) {
     const newLine = document.createElement('div');
     newLine.textContent = text;
-    terminalOutput.appendChild(newLine);
-    terminalOutput.scrollTop = terminalOutput.scrollHeight; // Otomatik kaydırma
+    outputDiv.appendChild(newLine);
+    outputDiv.scrollTop = outputDiv.scrollHeight;  // Scroll to the bottom
 }
 
-// Komut işleme
-function handleCommand(command) {
-    switch (command.toLowerCase()) {
-        case 'help':
-            writeToTerminal('Komutlar: help, clear, ls');
-            break;
-        case 'clear':
-            terminalOutput.innerHTML = ''; // Terminali temizle
-            break;
-        case 'ls':
-            writeToTerminal('index.html\nstyle.css\nscript.js');
-            break;
-        default:
-            writeToTerminal(`'${command}' tanınmıyor.`);
+function processCommand(command) {
+    // Simulate command output
+    if (command.toLowerCase() === "hello") {
+        addToOutput("Merhaba! Terminal'e hoş geldiniz.");
+    } else if (command.toLowerCase() === "clear") {
+        outputDiv.innerHTML = '';
+    } else {
+        addToOutput(`Komut bulunamadı: ${command}`);
     }
 }
