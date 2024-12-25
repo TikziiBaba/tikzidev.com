@@ -1,55 +1,44 @@
-/* Gövde stili */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #000; /* Siyah arka plan */
-    color: #fff; /* Beyaz yazı */
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
 }
 
-/* Terminal kutusu */
-.terminal-container {
+#terminal {
     width: 80%;
-    max-width: 800px;
-    height: 60%;
-    background-color: #111; /* Terminal arka planı koyu gri */
-    border: 2px solid #fff;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Parlama efekti */
+    max-width: 900px;
+    height: 70vh;
+    border: 2px solid white;
+    padding: 20px;
+    overflow-y: auto;
+    white-space: pre-wrap;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 
-/* Çıktı ve giriş alanları */
-.terminal-output {
+#output {
     flex-grow: 1;
     overflow-y: auto;
-    padding: 10px;
-    white-space: pre-wrap; /* Satır kaydırma */
-}
-
-.input-line {
-    display: flex;
-    align-items: center;
-}
-
-.prompt {
-    margin-right: 5px;
-    color: #0f0; /* Yeşil renkli prompt */
+    margin-bottom: 10px;
 }
 
 #input {
-    background: none;
+    background-color: black;
+    color: white;
     border: none;
-    color: #fff;
-    font-size: 16px;
     outline: none;
+    font-size: 18px;
     width: 100%;
-    caret-color: #0f0; /* Yeşil imleç */
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#input:focus {
+    outline: none;
 }
