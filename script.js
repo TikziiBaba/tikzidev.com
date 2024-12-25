@@ -1,88 +1,83 @@
 const output = document.getElementById('output');
 const inputField = document.getElementById('input');
-const cursor = document.getElementById('cursor');
 
-// Terminal içeriği simüle edilen veriler
-const files = {
-    "README.md": "Bu, terminal simülatörünün örnek dosyasıdır.",
-    "project.js": "console.log('Merhaba dünya!');",
-    "index.html": "<!DOCTYPE html><html><head><title>Terminal</title></head><body></body></html>"
-};
-
-let currentDirectory = "~"; // Şu anki çalışma dizini
-
-// Kullanıcı yazdığında terminale yazı ekle
+// Komut işleyici
 inputField.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
-        const userInput = inputField.value.trim();
-        writeToTerminal(`> ${userInput}`); // Kullanıcı girişini terminale yazdır
-        inputField.value = ''; // Yazı kutusunu temizle
-        handleCommand(userInput); // Komutu işleme al
-        event.preventDefault(); // Enter tuşunun varsayılan işlevini engelle
+        const userInput = inputField.value.trim(); // Kullanıcı girişini al
+        if (userInput) {
+            writeToTerminal(`> ${userInput}`); // Kullanıcı girişini terminale yazdır
+            handleCommand(userInput); // Komutu işle
+        }
+        inputField.value = ''; // Giriş alanını temizle
+        event.preventDefault(); // Enter tuşunun varsayılan davranışını engelle
     }
 });
 
-// Terminale yazı eklemek için
-function writeToTerminal(inputText) {
+// Terminale yazı ekleme
+function writeToTerminal(text) {
     const newLine = document.createElement('div');
-    newLine.innerHTML = inputText; // Metni terminale ekle
+    newLine.textContent = text;
     output.appendChild(newLine);
-    output.scrollTop = output.scrollHeight; // Terminali aşağı kaydır
+    output.scrollTop = output.scrollHeight; // Otomatik olarak en sona kaydır
 }
 
-// Komutları işleme alma
+// Komutları işleme
 function handleCommand(command) {
-    const args = command.split(" ");
-    const baseCommand = args[0];
+    const args = command.split(' ');
+    const baseCommand = args[0].toLowerCase();
 
-    switch (baseCommand.toLowerCase()) {
-        case "help":
+    switch (baseCommand) {
+        case 'help':
             showHelp();
             break;
-        case "clear":
-            output.innerHTML = ''; // Ekranı temizle
+        case 'clear':
+            output.innerHTML = ''; // Terminali temizle
             break;
-        case "ls":
+        case 'ls':
             listFiles();
             break;
-        case "pwd":
-            writeToTerminal(currentDirectory);
+        case 'pwd':
+            writeToTerminal('/home/user'); // Örnek çalışma dizini
             break;
-        case "cat":
+        case 'cat':
             if (args[1]) {
                 showFileContent(args[1]);
             } else {
-                writeToTerminal("cat: Bir dosya adı belirtmelisiniz.");
+                writeToTerminal('cat: Dosya adı belirtmelisiniz.');
             }
             break;
-        case "echo":
-            const message = args.slice(1).join(" ");
-            writeToTerminal(message);
-            break;
         default:
-            writeToTerminal(`'${command}' komutu tanınmıyor. 'help' yazarak geçerli komutları görebilirsiniz.`);
+            writeToTerminal(`'${command}' komutu tanınmıyor. 'help' yazarak yardım alabilirsiniz.`);
     }
 }
 
 // Yardım menüsü
 function showHelp() {
-    writeToTerminal("Mevcut Komutlar:");
-    writeToTerminal("  help       - Bu yardım menüsünü gösterir.");
-    writeToTerminal("  clear      - Terminali temizler.");
-    writeToTerminal("  ls         - Mevcut dizindeki dosyaları listeler.");
-    writeToTerminal("  pwd        - Bulunduğunuz dizini gösterir.");
-    writeToTerminal("  cat <dosya> - Bir dosyanın içeriğini görüntüler.");
-    writeToTerminal("  echo <yazı> - Terminalde bir yazı yazdırır.");
+    writeToTerminal('Mevcut Komutlar:');
+    writeToTerminal('  help       - Yardım menüsünü gösterir.');
+    writeToTerminal('  clear      - Terminali temizler.');
+    writeToTerminal('  ls         - Dosyaları listeler.');
+    writeToTerminal('  pwd        - Geçerli dizini gösterir.');
+    writeToTerminal('  cat <dosya> - Dosya içeriğini görüntüler.');
 }
 
-// Dosyaları listeleme
+// Dosya listesi
 function listFiles() {
-    writeToTerminal("Mevcut dosyalar:");
-    Object.keys(files).forEach(file => writeToTerminal(`  ${file}`));
+    writeToTerminal('Dosyalar:');
+    writeToTerminal('  README.md');
+    writeToTerminal('  index.html');
+    writeToTerminal('  script.js');
 }
 
-// Dosya içeriğini gösterme
+// Örnek dosya içerikleri
 function showFileContent(fileName) {
+    const files = {
+        'README.md': 'Bu, örnek bir README dosyasıdır.',
+        'index.html': '<!DOCTYPE html><html><head><title>Terminal</title></head><body></body></html>',
+        'script.js': 'console.log("Merhaba, dünya!");'
+    };
+
     if (files[fileName]) {
         writeToTerminal(`İçerik (${fileName}):`);
         writeToTerminal(files[fileName]);
@@ -91,7 +86,8 @@ function showFileContent(fileName) {
     }
 }
 
-// Sayfa yüklendiğinde terminali başlat
+// Sayfa yüklendiğinde hoş geldin mesajı
 window.onload = () => {
-    writeToTerminal("Hoş geldiniz! 'help' yazarak geçerli komutları görebilirsiniz.");
+    writeToTerminal('Web Terminaline hoş geldiniz!');
+    writeToTerminal('Bir komut girin veya "help" yazarak yardım alabilirsiniz.');
 };
