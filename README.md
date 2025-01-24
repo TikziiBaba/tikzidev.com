@@ -1,23 +1,22 @@
-TikziDev - Web Tasarım ve Yazılım Hizmetleri
-TikziDev, yenilikçi ve kullanıcı dostu web tasarım çözümleri sunan bir platformdur. Hem bireysel kullanıcılar hem de işletmeler için modern ve işlevsel web siteleri geliştirmeyi hedefler. Kullanıcı dostu arayüzler, özelleştirilebilir özellikler ve hızlı performans ile web dünyasında etkili bir varlık oluşturmanıza yardımcı olur.
+Merhaba, Ben Bekir Kaplan!
 
-Özellikler
-Özelleştirilebilir Web Tasarımları: Farklı ihtiyaçlara uygun, esnek ve şık web tasarımları.
-Kapsamlı Dokümantasyon: Kullanıcıların kolayca projelerini oluşturmasına olanak sağlayan detaylı rehberler ve dokümantasyon.
-Hızlı ve Güvenli Performans: Web sitelerinizin hızlı yüklenmesi ve güvenliği için optimize edilmiş altyapı.
-SEO Dostu Yapı: Arama motorları için optimize edilmiş kod yapısı sayesinde sitenizin görünürlüğünü artırır.
-Responsive Tasarımlar: Tüm cihazlarda mükemmel görüntülenme sağlayan, mobil uyumlu tasarımlar.
-Kullanım
-TikziDev'i kullanmaya başlamak için aşağıdaki adımları izleyebilirsiniz:
+Ben, yazılım geliştirme ve siber güvenlik konularına ilgi duyan bir öğrenci olarak teknoloji dünyasına adım atmış biriyim. Bilgisayarlarla ilgili her şeyin beni cezbettiği bir dönemde, yazılım geliştirmeye olan ilgim arttı. Şu an hem yazılım geliştirme hem de siber güvenlik üzerine bilgi birikimimi artırmak için sürekli çalışıyorum.
 
-Web Sitesine Kaydolun: tikzidev.com.tr adresine giderek ücretsiz üyelik oluşturun.
-Projenizi Seçin veya Başlatın: İhtiyacınıza uygun bir şablon seçin veya sıfırdan yeni bir proje oluşturun.
-Tasarımlarınızı Özelleştirin: Sitenizin renk, font, içerik ve diğer öğelerini kişiselleştirin.
-Yayınlayın ve Paylaşın: Web sitenizi kolayca yayınlayarak çevrimiçi dünyaya açılın.
-İletişim
-TikziDev hakkında daha fazla bilgi almak veya destek talep etmek için bizimle iletişime geçebilirsiniz:
+Yazılım Geliştirme Hakkında
 
-E-posta: iletisim@tikzidev.com.tr
-Destek Sayfası: Destek
-Katkıda Bulun
-Projeye katkı sağlamak isterseniz, öneri ve hata bildirimlerinizi GitHub üzerinden yapabilirsiniz. Her türlü katkı, projeyi daha iyi hale getirmemize yardımcı olacaktır.
+Yazılım dillerine olan ilgim, küçük yaşlardan itibaren başladı. Python, JavaScript, C++ gibi dillerde temel bilgiye sahibim ve zamanla farklı projeler yaparak bu bilgimi geliştirmeye çalışıyorum. Web geliştirme, uygulama yazılımı ve veri tabanı yönetimi gibi alanlarda öğrendiklerimi uygulamalı olarak pekiştiriyorum. Öğrenmeye ve yeni şeyler keşfetmeye devam ediyorum!
+
+Siber Güvenlik ve Bilişim Güvenliği
+
+Yazılım geliştirmenin yanında, siber güvenlik de ilgimi çeken bir alan. Teknolojinin hızla gelişmesiyle birlikte siber saldırılar ve tehditler de artıyor. Bu yüzden, bu alanda da kendimi geliştirmeye başladım. Ağ güvenliği, şifreleme ve temel güvenlik önlemleri üzerine çalışmalar yaparak bu konudaki bilincimi artırıyorum.
+
+Projelerim ve Öğrenme Sürecim
+
+Şu anki projelerim genellikle öğrendiğim teorik bilgileri pratiğe dökme üzerine. Hem okulda öğrendiklerimi hem de kendi başıma araştırarak edindiğim bilgileri, küçük projelerle pekiştiriyorum. Bu projeler, yazılım geliştirme ve siber güvenlik alanındaki becerilerimi geliştirmeme yardımcı oluyor. Bir gün daha büyük projelere adım atmak ve bu alandaki gelişmelere katkı sağlamak istiyorum.
+
+Gelecek Vizyonum
+
+Yazılım geliştirme ve siber güvenlik konularında daha fazla bilgi edinmeye devam edeceğim. Teknoloji hızla değişiyor ve ben de bu değişime ayak uydurarak kendimi sürekli olarak geliştirmeyi planlıyorum. Her zaman daha iyi ve güvenli yazılımlar üretmeye, siber tehditlere karşı çözüm önerileri geliştirmeye odaklanmak istiyorum.
+
+Eğer bu konularda bir şeyler öğrenmek, projelerde yer almak veya birbirimize fikir alışverişi yapmak isterseniz, her zaman iletişime geçebilirsiniz! Öğrenmeye ve gelişmeye devam etmek için birlikte çalışmak harika olurdu.
+
