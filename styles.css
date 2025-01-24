@@ -1,0 +1,257 @@
+/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #181818, #141414); /* Koyu gri tonları */
+    color: #b0b0b0; /* Açık gri */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background 0.5s;
+}
+
+/* Header ve Menü */
+header {
+    background-color: transparent;
+    padding: 30px 20px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #666666; /* Koyu gri */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #111111; /* Koyu siyah */
+}
+
+/* Hero Bölümü */
+#hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+#hero .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-direction: column;
+}
+
+.profile-photo {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 4px solid #111111; /* Koyu gri */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+}
+
+.text-content h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #00a4b2; /* Daha koyu mavi */
+}
+
+.text-content p {
+    font-size: 1.5rem;
+    color: #999999; /* Koyu gri */
+    margin: 20px 0;
+}
+
+.cta-button {
+    background-color: #111111; /* Koyu siyah */
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #333333; /* Koyu gri */
+    transform: translateY(-5px);
+}
+
+/* Bölüm Başlıkları */
+h2 {
+    color: #00a4b2; /* Daha koyu mavi */
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Genel Bölüm Stilleri */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    background: #111111; /* Koyu siyah */
+    margin: 30px 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Proje ve Hakkımda Bölümü */
+#projects-and-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 60px 20px;
+    background-color: #111111; /* Koyu siyah */
+    margin: 30px 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+.left-section, .right-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.project {
+    background-color: #222222; /* Koyu gri */
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+.project h3 {
+    color: #111111; /* Koyu siyah */
+    margin-bottom: 10px;
+}
+
+/* Dil Kutuları */
+.languages-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Her dil kutusu 200px'den büyük olmayacak */
+    gap: 15px;
+    justify-items: center;
+}
+
+.language-box {
+    background-color: #222222; /* Koyu gri */
+    padding: 8px 16px;
+    border: 1px solid #00a4b2; /* Daha koyu mavi */
+    border-radius: 25px;
+    color: #00a4b2; /* Daha koyu mavi */
+    text-align: center;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 5px 0;
+}
+
+.language-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Proje ve Dil Kutuları Mobil Uyumlu Yapma */
+@media (max-width: 768px) {
+    #projects-and-about {
+        grid-template-columns: 1fr; /* Mobilde tek sütun */
+    }
+}
+
+/* İletişim Kutuları */
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-item {
+    background-color: #222222;
+    color: #00a4b2; /* Daha koyu mavi */
+    padding: 12px 20px;
+    margin: 10px 0;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 250px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-item:hover {
+    background-color: #333333; /* Koyu gri */
+    transform: translateY(-5px);
+}
+
+.contact-item a {
+    color: #00a4b2; /* Daha koyu mavi */
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: #3993d8; /* Koyu mavi */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0d0d0d; /* Koyu siyah */
+    color: #666666; /* Koyu gri */
+    margin-top: auto;
+}
+
+/* Linkler İçin Ayrı Stiller */
+a {
+    color: #00a4b2; /* Daha koyu mavi */
+    text-decoration: none; /* Alt çizgiyi kaldırmak için */
+}
+
+a:hover {
+    color: #3993d8; /* Koyu mavi */
+    text-decoration: underline; /* Hover durumunda alt çizgi ekler */
+}
