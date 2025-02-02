@@ -58,6 +58,7 @@ body {
     text-decoration: none;
     border-radius: 10px;
     transition: background-color 0.3s ease;
+    max-width: fit-content; /* Butonun genişliğini içeriğine göre ayarlıyoruz */
 }
 
 .button i {
@@ -68,6 +69,8 @@ body {
 .button:hover {
     background-color: #555555;
 }
+
+
 
 /* Projeler Bölümü */
 #projeler {
