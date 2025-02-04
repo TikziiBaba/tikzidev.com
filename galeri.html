@@ -3,36 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeri | bekirkaplan.com</title>
+    <title>Bekir's Gallery 🖼️</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="galeri.css">
+    <script defer src="galeri.js"></script>
+    <link rel="icon" type="image/png" href="icoon.png">
 </head>
 <body>
 
-    <!-- Galeri -->
-    <div id="galeri">
-        <div class="tv-frame">
-            <div class="gallery-container">
-                <img class="galleryImage active" src="images/image1.png" alt="Resim 1">
-                <img class="galleryImage" src="images/image2.png" alt="Resim 2">
-                <img class="galleryImage" src="images/image3.png" alt="Resim 3">
-                <img class="galleryImage" src="images/image4.png" alt="Resim 4">
-                <img class="galleryImage" src="images/image5.png" alt="Resim 5">
-                <img class="galleryImage" src="images/image6.png" alt="Resim 6">
-            </div>
-            <div class="tv-stand"></div>
-            <div class="tv-stand-bar"></div>
+    <h1>Bekir's Gallery 🖼️</h1>
+    <div class="gallery">
+        <div class="gallery-item"><img src="images/image1.png" alt="Resim 1" onclick="openLightbox(0)"></div>
+        <div class="gallery-item"><img src="images/image2.png" alt="Resim 2" onclick="openLightbox(1)"></div>
+        <div class="gallery-item"><img src="images/image3.png" alt="Resim 3" onclick="openLightbox(2)"></div>
+        <div class="gallery-item"><img src="images/image4.png" alt="Resim 4" onclick="openLightbox(3)"></div>
+        <div class="gallery-item"><img src="images/image5.png" alt="Resim 5" onclick="openLightbox(4)"></div>
+        <div class="gallery-item"><img src="images/image6.png" alt="Resim 6" onclick="openLightbox(4)"></div>
+    </div>
+
+    <!-- Lightbox (Büyütme Ekranı) -->
+    <div class="lightbox" id="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+        <img id="lightbox-img">
+        <button class="next" onclick="changeImage(1)">&#10095;</button>
+
+        <!-- Paylaş ve İndir Butonları -->
+        <div class="controls">
+            <button onclick="downloadImage()">📥 İndir</button>
+            <button onclick="shareImage()">📤 Paylaş</button>
+        </div>
+
+        <!-- Thumbnail Önizleme -->
+        <div class="thumbnail-container">
+            <img class="thumbnail" src="images/image1.png" onclick="openLightbox(0)">
+            <img class="thumbnail" src="images/image2.png" onclick="openLightbox(1)">
+            <img class="thumbnail" src="images/image3.png" onclick="openLightbox(2)">
+            <img class="thumbnail" src="images/image4.png" onclick="openLightbox(3)">
+            <img class="thumbnail" src="images/image5.png" onclick="openLightbox(4)">
+            <img class="thumbnail" src="images/image6.png" onclick="openLightbox(4)">
         </div>
     </div>
 
-    <!-- Kumanda -->
-    <div class="remote-control">
-        <button id="prevButton">⏮️</button> <!-- Önceki resim -->
-        <button id="nextButton">⏭️</button> <!-- Sonraki resim -->
-        <button id="playButton">▶️</button> <!-- Oynat -->
-        <button id="pauseButton">⏸️</button> <!-- Duraklat -->
-    </div>
-    
-
-    <script src="galeri.js"></script>
 </body>
 </html>
