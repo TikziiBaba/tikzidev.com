@@ -1,88 +1,73 @@
-let currentIndex = 0;
-const images = document.querySelectorAll('.galleryImage');
-const totalImages = images.length;
+let currentImageIndex = 0;
+const images = [
+    "images/image1.png",
+    "images/image2.png",
+    "images/image3.png",
+    "images/image4.png",
+    "images/image5.png",  // Virgül eklenmeli
+    "images/image6.png"
+];
 
-// Resimleri değiştirme fonksiyonu
-function changeImage(index) {
-    // Resimleri geçici olarak gizle
-    images.forEach(image => {
-        image.classList.remove('active');
-    });
+// Işıklı kutuyu açma fonksiyonu
+function openLightbox(index) {
+    currentImageIndex = index;
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = images[currentImageIndex];
 
-    // Yeni resmi aktif yap
-    images[index].classList.add('active');
+    // Tarayıcının yüklediğinden emin olmak için konsola yazdır
+    console.log("Açılan resim yolu:", images[currentImageIndex]);
 }
 
-// Başlangıçta ilk resmi göster
-changeImage(currentIndex);
+// Işıklı kutuyu kapama fonksiyonu
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
 
-// Sağ ve sol kaydırma için touch olayları
-let touchStartX = 0;
+// Resmi değiştirme fonksiyonu (önceki / sonraki)
+function changeImage(direction) {
+    currentImageIndex += direction;
+    if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+    if (currentImageIndex >= images.length) currentImageIndex = 0;
+    document.getElementById("lightbox-img").src = images[currentImageIndex];
+}
 
-document.getElementById('galeri').addEventListener('touchstart', (event) => {
-    touchStartX = event.changedTouches[0].screenX; // Başlangıç noktasını kaydet
-});
+// 🔹 Resmi İndirme Fonksiyonu (Daha Güvenli)
+function downloadImage() {
+    const imageUrl = images[currentImageIndex];
 
-document.getElementById('galeri').addEventListener('touchend', (event) => {
-    const touchEndX = event.changedTouches[0].screenX; // Bitiş noktasını kaydet
-    const touchDifference = touchStartX - touchEndX; // Farkı hesapla
+    // İndirme işlemini fetch ile yapmak
+    fetch(imageUrl)
+        .then(response => {
+            // Eğer yanıt başarısızsa (404 gibi), hata fırlat
+            if (!response.ok) {
+                throw new Error(`Resim yüklenemedi! Durum kodu: ${response.status}`);
+            }
+            return response.blob();  // Resmi blob olarak al
+        })
+        .then(blob => {
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = `bekirs-gallery-${currentImageIndex + 1}.jpg`;  // İndirme ismi, her resme özel
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);  // Linki DOM'dan kaldır
+        })
+        .catch(error => {
+            console.error("İndirme hatası:", error);
+            alert(`İndirme sırasında bir hata oluştu: ${error.message}`);  // Hata mesajı
+        });
+}
 
-    if (touchDifference > 50) {
-        // Sola kaydırma
-        currentIndex = (currentIndex + 1) % totalImages;
-    } else if (touchDifference < -50) {
-        // Sağa kaydırma
-        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+
+// 🔹 Resmi Paylaşma Fonksiyonu
+function shareImage() {
+    if (navigator.share) {
+        navigator.share({
+            title: "Bekir's Gallery",
+            text: "Bu harika resmi incele!",
+            url: window.location.origin + "/" + images[currentImageIndex]  // Resmi paylaşma
+        }).catch(err => console.log("Paylaşım başarısız: ", err));
+    } else {
+        alert("Tarayıcınız paylaşımı desteklemiyor.");
     }
-
-    changeImage(currentIndex);
-});
-
-// Ok tuşlarıyla resim değiştirme (masaüstü için)
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowRight') {
-        // Sağ ok tuşu
-        currentIndex = (currentIndex + 1) % totalImages;
-        changeImage(currentIndex);
-    } else if (event.key === 'ArrowLeft') {
-        // Sol ok tuşu
-        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-        changeImage(currentIndex);
-    }
-});
-
-// Kumanda butonlarına işlevsellik ekleme
-const prevButton = document.querySelector('#prevButton');
-const nextButton = document.querySelector('#nextButton');
-const playButton = document.querySelector('#playButton');
-const pauseButton = document.querySelector('#pauseButton');
-
-let intervalID = null; // Resimlerin otomatik geçişini kontrol etmek için
-
-// Önceki buton
-prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-    changeImage(currentIndex);
-});
-
-// Sonraki buton
-nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % totalImages;
-    changeImage(currentIndex);
-});
-
-// Oynatma butonu
-playButton.addEventListener('click', () => {
-    if (intervalID === null) {
-        intervalID = setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalImages;
-            changeImage(currentIndex);
-        }, 2000); // 2 saniyede bir resim değişsin
-    }
-});
-
-// Duraklatma butonu
-pauseButton.addEventListener('click', () => {
-    clearInterval(intervalID);
-    intervalID = null;
-});
+}
