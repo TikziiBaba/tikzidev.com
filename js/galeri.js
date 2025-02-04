@@ -5,7 +5,13 @@ const images = [
     "images/image3.png",
     "images/image4.png",
     "images/image5.png",  // Virgül eklenmeli
-    "images/image6.png"
+    "images/image6.png",
+    "images/image7.png",  // Yeni resimler
+    "images/image8.png",
+    "images/image9.png",
+    "images/image10.png",
+    "images/image11.png",
+    "images/image12.png"
 ];
 
 // Işıklı kutuyu açma fonksiyonu
