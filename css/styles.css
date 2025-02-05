@@ -25,8 +25,8 @@ body {
 .profil img {
     width: 280px;
     height: 280px;
-    border-radius: 50%; /* Yuvarlak yapmak için */
-    object-fit: cover; /* Fotoğrafın kesilmeden tamamen içine sığmasını sağlar */
+    border-radius: 50%;
+    object-fit: cover;
     box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.1);
 }
 
@@ -58,19 +58,17 @@ body {
     text-decoration: none;
     border-radius: 10px;
     transition: background-color 0.3s ease;
-    max-width: fit-content; /* Butonun genişliğini içeriğine göre ayarlıyoruz */
+    max-width: fit-content;
 }
 
 .button i {
-    margin-right: 10px; /* İkon ile yazı arasına boşluk ekler */
-    font-size: 1.5em; /* İkon boyutunu ayarlar */
+    margin-right: 10px;
+    font-size: 1.5em;
 }
 
 .button:hover {
     background-color: #555555;
 }
-
-
 
 /* Projeler Bölümü */
 #projeler {
@@ -80,8 +78,8 @@ body {
 
 .project a {
     display: inline-block;
-    background-color: #222222; /* Daha koyu bir arka plan rengi */
-    color: #ffffff; /* Beyaz metin rengi */
+    background-color: #222222;
+    color: #ffffff;
     padding: 10px 20px;
     font-size: 1.1em;
     text-decoration: none;
@@ -90,7 +88,7 @@ body {
 }
 
 .project a:hover {
-    background-color: #444444; /* Hover efektinde daha açık bir koyu renk */
+    background-color: #444444;
 }
 
 /* Hakkımda ve Yetenekler Bölümü */
@@ -119,19 +117,19 @@ body {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 6px; /* Kutucuklar daha yakın olacak */
+    gap: 6px;
 }
 
 .yetenekler ul li {
-    background: #222222; /* Daha koyu renk */
-    padding: 5px 12px; /* Küçük ve yazıya yakın */
+    background: #222222;
+    padding: 5px 12px;
     border-radius: 40px;
     font-size: 0.85em;
     display: inline-block;
     font-weight: bold;
     color: #ffffff;
     box-shadow: none;
-    transition: none; /* Mouse üstüne gelince değişmeyecek */
+    transition: none;
 }
 
 footer {
@@ -139,7 +137,7 @@ footer {
     color: #ffffff;
     padding: 20px 40px;
     text-align: right;
-    border-top: 1px solid #363636; /* Üst çizgi eklemek için */
+    border-top: 1px solid #363636;
 }
 
 .footer-content {
@@ -149,12 +147,11 @@ footer {
 }
 
 footer p {
-    font-size: 0.8em; /* Küçük yazı */
-    font-weight: bold; /* Yazıyı kalınlaştırdım */
+    font-size: 0.8em;
+    font-weight: bold;
     margin: 0;
 }
 
 .email {
     text-align: left;
 }
-
