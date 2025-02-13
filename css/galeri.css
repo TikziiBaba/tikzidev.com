@@ -7,9 +7,10 @@ body {
 }
 
 /* Galeri Düzeni */
+/* Galeri Düzeni */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* 4 kolonlu grid düzeni */
     gap: 10px;
     max-width: 900px;
     margin: auto;
