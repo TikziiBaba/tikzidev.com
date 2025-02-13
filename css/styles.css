@@ -241,3 +241,23 @@ footer p {
     opacity: 1; /* Görünür yap */
     transform: translateY(0); /* Normal konum */
 }
+
+.button.paint-button {
+    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+    background-size: 400% 400%;
+    color: #ffffff;
+    font-weight: bold;
+    transition: background-position 1.5s ease, transform 0.2s ease;
+    border: none;
+    animation: paint-anim 6s infinite alternate;
+}
+
+@keyframes paint-anim {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.button.paint-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
