@@ -6,21 +6,13 @@
     <title>bekirkaplan.com</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- Site Favicon -->
     <link rel="icon" type="image/png" href="iconbaba.png">
-
-    <!-- Open Graph -->
     <meta property="og:title" content="Bekir Kaplan - Yazılım Geliştirici">
     <meta property="og:description" content="Yazılım geliştirme ve siber güvenlik.">
     <meta property="og:image" content="https://tikzidev.com.tr/images/banner.png">
     <meta property="og:url" content="https://tikzidev.com.tr">
     <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Bekir Kaplan - Yazılım Geliştirici">
     <meta name="twitter:description" content="Yazılım geliştirme ve siber güvenlik.">
@@ -65,19 +57,12 @@
             <p>Merhaba! Ben <strong>Bekir</strong>, Almanya'nın Backnang şehrinde doğdum ve şu an bir lise öğrencisiyim. Günümün büyük bir kısmını yazılım yaparak ve oyun oynayarak geçiririm. Çok fazla sosyalleşmeyi sevmem, daha çok bilgisayarımda vakit geçiririm. Bir de domates çorbası ve kuşları çok severim.</p>
 
             <div class="buttons">
-                <a href="galeri.html" class="button">
-                    <i class="fas fa-images"></i> Galeri
-                </a>
-                <a href="https://open.spotify.com/user/31qvmdwqj23vb6kz47ienmmcsh4y" class="button" target="_blank">
-                    <i class="fab fa-spotify"></i> Spotify
-                </a>
-                <a href="https://donate.bynogame.com/bekirdev" class="button" target="_blank">
-                    <i class="fas fa-donate"></i> Donate
-                </a>
+                <a href="galeri.html" class="button"><i class="fas fa-images"></i> Galeri</a>
+                <a href="https://open.spotify.com/user/31qvmdwqj23vb6kz47ienmmcsh4y" class="button" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
+                <a href="https://donate.bynogame.com/bekirdev" class="button" target="_blank"><i class="fas fa-donate"></i> Donate</a>
             </div>
-            
-            
         </div>
+
         <div class="yetenekler">
             <h2>Yetenekler🔥</h2>
             <ul>
@@ -92,16 +77,48 @@
                 <li>Arch Linux</li>
                 <li>Adobe Photoshop Beginner</li>
             </ul>
+
+            <!-- Başarım Butonu -->
+            <div class="buttons">
+                <button class="button" onclick="basarimGoster()"><i class="fas fa-trophy"></i> Başarım!</button>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>© 2025 Bekir Kaplan. Tüm hakları saklıdır.</p>
-            <p class="email">bekirkaplan@tikzi.com</p>
+            <!-- Minecraft Başarım Bildirimi -->
+    <div id="basarim-bildirimi" class="basarim-gizle">
+        <img src="images/achievement.png" alt="Minecraft Başarım">
+        <div>
+            <p>Başarım Kazanıldı!</p>
+            
         </div>
-    </footer>
+    </div>
+
+    <audio id="basarim-sesi">
+        <source src="achievement.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function basarimGoster() {
+            const basarim = document.getElementById('basarim-bildirimi');
+            const ses = document.getElementById('basarim-sesi');
+
+            // Ses Efektini Çal
+            ses.play();
+
+            // Bildirimi Göster
+            basarim.classList.remove('basarim-gizle');
+            basarim.classList.add('basarim-goster');
+
+            // 4 saniye sonra bildirimi gizle
+            setTimeout(() => {
+                basarim.classList.remove('basarim-goster');
+                basarim.classList.add('basarim-gizle');
+            }, 4000);
+        }
+    </script>
+
+
 
 </body>
 </html>
