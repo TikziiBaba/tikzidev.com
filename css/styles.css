@@ -46,11 +46,13 @@ body {
     display: flex;
     gap: 15px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .button {
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: #282828;
     color: #ffffff;
     padding: 10px 20px;
@@ -67,13 +69,17 @@ body {
 }
 
 .button:hover {
-    background-color: #555555;
+    background-color: #444444;
 }
 
 /* Projeler Bölümü */
 #projeler {
     text-align: center;
     padding: 40px;
+}
+
+.project {
+    margin-bottom: 20px;
 }
 
 .project a {
@@ -132,6 +138,7 @@ body {
     transition: none;
 }
 
+/* Footer */
 footer {
     background-color: #121212;
     color: #ffffff;
@@ -154,4 +161,83 @@ footer p {
 
 .email {
     text-align: left;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 900px) {
+    #tanitim {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profil {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .bilgi {
+        text-align: center;
+    }
+
+    #bilgiler {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hakkimda, .yetenekler {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+}
+#basarim-bildirimi {
+    position: fixed;
+    top: 20px; /* Sağ üstten 20px uzaklık */
+    right: 20px; /* Sağdan 20px uzaklık */
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 2px solid #555;
+    transition: top 0.5s ease; /*  Animasyonlu geçiş */
+    z-index: 999;
+    opacity: 0; /* Başlangıçta görünmez */
+    transform: translateY(-20px); /* Y ekseninde başlangıçta biraz yukarıda */
+}
+
+/* Görünür hale gelince animasyon */
+#basarim-bildirimi.basarim-goster {
+    opacity: 1; /* Görünür yap */
+    transform: translateY(0); /* Resmi orijinal yerine yerleştir */
+}
+
+#basarim-bildirimi img {
+    width: auto; /* Genişlik sınırsız */
+    height: 80px; /* Yüksekliği 80px yapalım */
+    margin-right: 10px;
+}
+
+
+#basarim-bildirimi p {
+    font-weight: bold;
+    margin: 0;
+    color: #FFD700;
+    font-size: 1.1em;
+}
+
+#basarim-bildirimi span {
+    font-size: 0.9em;
+    color: #ddd;
+}
+
+.basarim-gizle {
+    opacity: 0; /* Görünmez yap */
+    transform: translateY(-20px); /* Yukarı kaydır */
+}
+
+.basarim-goster {
+    opacity: 1; /* Görünür yap */
+    transform: translateY(0); /* Normal konum */
 }
