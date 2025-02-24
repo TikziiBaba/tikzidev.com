@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bekir's Gallery 🖼️</title>
+    <title>Bekir's Gallery 🎨</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/galeri.css">
     <script defer src="js/galeri.js"></script>
@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <h1>Bekir's Gallery 🖼️</h1>
+    <h1>Bekir's Gallery 🎨</h1>
      <div class="thumbnail-container">
             <img class="thumbnail" src="images/image1.png" onclick="openLightbox(0)">
             <img class="thumbnail" src="images/image2.png" onclick="openLightbox(1)">
@@ -33,7 +33,17 @@
             <img class="thumbnail" src="images/image18.png" onclick="openLightbox(17)">
             <img class="thumbnail" src="images/image19.png" onclick="openLightbox(18)">
             <img class="thumbnail" src="images/image20.png" onclick="openLightbox(19)">
-
+            <img class="thumbnail" src="images/image21.png" onclick="openLightbox(20)">
+            <img class="thumbnail" src="images/image22.png" onclick="openLightbox(21)">
+            <img class="thumbnail" src="images/image23.png" onclick="openLightbox(22)">
+            <img class="thumbnail" src="images/image24.png" onclick="openLightbox(23)">
+            <img class="thumbnail" src="images/image25.png" onclick="openLightbox(24)">
+            <img class="thumbnail" src="images/image26.png" onclick="openLightbox(25)">
+            <img class="thumbnail" src="images/image27.png" onclick="openLightbox(26)">
+            <img class="thumbnail" src="images/image28.png" onclick="openLightbox(27)">
+            <img class="thumbnail" src="images/image29.png" onclick="openLightbox(28)">
+            <img class="thumbnail" src="images/image30.png" onclick="openLightbox(29)">
+            <img class="thumbnail" src="images/image31.png" onclick="openLightbox(30)">
         </div>
     <!-- Lightbox (Büyütme Ekranı) -->
     <div class="lightbox" id="lightbox">
@@ -44,33 +54,18 @@
 
         <!-- Paylaş ve İndir Butonları -->
         <div class="controls">
-            <button onclick="downloadImage()">📥 İndir</button>
+            <button onclick="downloadImage()">👅 İndir</button>
             <button onclick="shareImage()">📤 Paylaş</button>
         </div>
 
         <!-- Thumbnail Önizleme -->
         <div class="thumbnail-container">
-            <img class="thumbnail" src="images/image1.png" onclick="openLightbox(0)">
-            <img class="thumbnail" src="images/image2.png" onclick="openLightbox(1)">
-            <img class="thumbnail" src="images/image3.png" onclick="openLightbox(2)">
-            <img class="thumbnail" src="images/image4.png" onclick="openLightbox(3)">
-            <img class="thumbnail" src="images/image5.png" onclick="openLightbox(4)">
-            <img class="thumbnail" src="images/image6.png" onclick="openLightbox(5)">
-            <img class="thumbnail" src="images/image7.png" onclick="openLightbox(6)">
-            <img class="thumbnail" src="images/image8.png" onclick="openLightbox(7)">
-            <img class="thumbnail" src="images/image9.png" onclick="openLightbox(8)">
-            <img class="thumbnail" src="images/image10.png" onclick="openLightbox(9)">
-            <img class="thumbnail" src="images/image11.png" onclick="openLightbox(10)">
-            <img class="thumbnail" src="images/image12.png" onclick="openLightbox(11)">
-            <img class="thumbnail" src="images/image13.png" onclick="openLightbox(12)">
-            <img class="thumbnail" src="images/image14.png" onclick="openLightbox(13)">
-            <img class="thumbnail" src="images/image15.png" onclick="openLightbox(14)">
-            <img class="thumbnail" src="images/image16.png" onclick="openLightbox(15)">
-            <img class="thumbnail" src="images/image17.png" onclick="openLightbox(16)">
-            <img class="thumbnail" src="images/image18.png" onclick="openLightbox(17)">
-            <img class="thumbnail" src="images/image19.png" onclick="openLightbox(18)">
-            <img class="thumbnail" src="images/image20.png" onclick="openLightbox(19)">
-
+            <!-- Aynı 31 resmi tekrar ekledim -->
+            <script>
+                for (let i = 0; i < 31; i++) {
+                    document.write(`<img class="thumbnail" src="images/image${i+1}.png" onclick="openLightbox(${i})">`);
+                }
+            </script>
         </div>
     </div>
 
