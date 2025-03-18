@@ -30,8 +30,22 @@ const images = [
     "images/image28.png",
     "images/image29.png",
     "images/image30.png",
-    "images/image31.png"
+    "images/image31.png",
+    "images/image32.png",
+    "images/image33.png",
+    "images/image34.png",
+    "images/image35.png",
+    "images/image36.png",
+    "images/image37.png",
+    "images/image38.png",
+    "images/image39.png",
+    "images/image40.png",
+    "images/image41.png",
+    "images/image42.png",
+    "images/image43.png",
+    "images/image44.png"
 ];
+
 
 // Işıklı kutuyu açma fonksiyonu
 function openLightbox(index) {
