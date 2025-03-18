@@ -9,7 +9,7 @@ body {
 /* Galeri Düzeni */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(5, 1fr); /* 5 sütun oluşturur */
     gap: 10px;
     max-width: 900px;
     margin: auto;
@@ -122,4 +122,17 @@ body {
 
 .thumbnail:hover {
     transform: scale(1.1);
+}
+
+/* Küçük Ekranlar İçin (Mobil) */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* Mobilde 3 sütun olsun */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* Küçük ekranlarda 2 sütun olsun */
+    }
 }
