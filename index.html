@@ -1,22 +1,63 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bekirkaplan.com</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" type="image/png" href="iconbaba.png">
-    <meta property="og:title" content="Bekir Kaplan - Yazılım Geliştirici">
-    <meta property="og:description" content="Yazılım geliştirme ve siber güvenlik.">
-    <meta property="og:image" content="https://tikzidev.com.tr/images/banner.png">
-    <meta property="og:url" content="https://tikzidev.com.tr">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bekir Kaplan - Yazılım Geliştirici">
-    <meta name="twitter:description" content="Yazılım geliştirme ve siber güvenlik.">
-    <meta name="twitter:image" content="https://tikzidev.com.tr/images/banner.png">
+    <head>
+        <head>
+            <!-- Temel Meta -->
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          
+            <!-- Site Başlığı ve Favicon -->
+            <title>bekirkaplan.com</title>
+            <link rel="icon" type="image/png" href="iconbaba.png">
+          
+            <!-- Google Fonts -->
+            <link 
+              href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" 
+              rel="stylesheet"
+            >
+          
+            <!-- Font Awesome (İkonlar) -->
+            <link 
+              rel="stylesheet" 
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            >
+          
+            <!-- AOS CSS (Scroll Animasyonları) -->
+            <link 
+              href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" 
+              rel="stylesheet"
+            >
+          
+            <!-- Kendi Stil Dosyanız -->
+            <link rel="stylesheet" href="css/styles.css">
+          
+            <!-- Open Graph Meta (Sosyal Paylaşım) -->
+            <meta property="og:title" content="Bekir Kaplan - Yazılım Geliştirici">
+            <meta property="og:description" content="Yazılım geliştirme ve siber güvenlik.">
+            <meta property="og:image" content="https://tikzidev.com.tr/images/banner.png">
+            <meta property="og:url" content="https://tikzidev.com.tr">
+            <meta property="og:type" content="website">
+          
+            <!-- Twitter Card Meta -->
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:title" content="Bekir Kaplan - Yazılım Geliştirici">
+            <meta name="twitter:description" content="Yazılım geliştirme ve siber güvenlik.">
+            <meta name="twitter:image" content="https://tikzidev.com.tr/images/banner.png">
+          </head>
+          
+      </head>
+      
+      <!-- sayfanın en altında, </body> etiketinden hemen önce ekleyin: -->
+      <!-- AOS JS -->
+      <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+      <script>
+        AOS.init({
+          duration: 800,    // Animasyon süresi (ms)
+          once: true        // Bir kez animasyon göster, tekrar gösterme
+        });
+      </script>
+      
 </head>
 
 <body>
@@ -37,18 +78,23 @@
         </div>
     </section>
 
-    <!-- Projeler Bölümü -->
-    <section id="projeler">
+    <section id="projeler" data-aos="fade-up">
         <h2>Projelerim</h2>
-        <div class="project">
-            <h3>Proje 1</h3>
-            <a href="https://tikzidev.xyz" target="_blank">bekirkaplan.xyz</a>
-        </div>
-        <div class="project">
-            <h3>Proje 2</h3>
-            <a href="https://tikzidev.online" target="_blank">bekirkaplan.online</a>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>bekirkaplan.online</h3>
+                <p>Kendi yaptığım bir uzaktan erişim aplikasyonu</p>
+                <a href="https://tikzidev.online" class="project-button" target="_blank">Projeye Git</a>
+            </div>
+            <div class="project-card">
+                <h3>bekirkaplan.xyz</h3>
+                <p>YAKINDA!!!</p>
+                <a href="https://tikzidev.xyz" class="project-button" target="_blank">Projeye Git</a>
+            </div>
         </div>
     </section>
+    
+
 
     <!-- Hakkımda ve Yetenekler Bölümü -->
     <section id="bilgiler">
@@ -68,24 +114,25 @@
         <div class="yetenekler">
             <h2>Yetenekler🔥</h2>
             <ul>
-                <li>Python</li>
-                <li>SQL</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>C++</li>
-                <li>Linux</li>
-                <li>Git</li>
-                <li>Arch Linux</li>
-                <li>Adobe Photoshop Beginner</li>
-            </ul>
+                <li><i class="fab fa-python" style="color: #FFD43B;"></i> Python</li>
+                <li><i class="fas fa-database" style="color: #4DB33D;"></i> SQL</li>
+                <li><i class="fab fa-html5" style="color: #E34F26;"></i> HTML</li>
+                <li><i class="fab fa-css3-alt" style="color: #1572B6;"></i> CSS</li>
+                <li><i class="fab fa-js-square" style="color: #F7DF1E;"></i> JavaScript</li>
+                <li><i class="fas fa-code" style="color: #00599C;"></i> C++</li>
+                <li><i class="fab fa-linux" style="color: #FCC624;"></i> Linux</li>
+                <li><i class="fab fa-git-alt" style="color: #F1502F;"></i> Git</li>
+                <li><i class="fab fa-linux" style="color: #1793D1;"></i> Arch Linux</li>
+                <li><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Photoshop" style="width:20px; vertical-align:middle; margin-right:8px;"> Adobe Photoshop Beginner</li>
 
-            <!-- Başarım Butonu -->
-            <div class="buttons">
+            </ul>
+        
+            <div class="buttons buttons-yetenekler">
                 <button class="button" onclick="basarimGoster()"><i class="fas fa-trophy"></i> Başarım!</button>
                 <a href="paint.html" class="button"><i class="fas fa-paint-brush"></i> Paint</a>
             </div>
         </div>
+        
     </section>
 
     <!-- Minecraft Başarım Bildirimi -->
