@@ -1,171 +1,155 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <head>
-        <head>
-            <!-- Temel Meta -->
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          
-            <!-- Site Başlığı ve Favicon -->
-            <title>bekirkaplan.com</title>
-            <link rel="icon" type="image/png" href="iconbaba.png">
-          
-            <!-- Google Fonts -->
-            <link 
-              href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" 
-              rel="stylesheet"
-            >
-          
-            <!-- Font Awesome (İkonlar) -->
-            <link 
-              rel="stylesheet" 
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-            >
-          
-            <!-- AOS CSS (Scroll Animasyonları) -->
-            <link 
-              href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" 
-              rel="stylesheet"
-            >
-          
-            <!-- Kendi Stil Dosyanız -->
-            <link rel="stylesheet" href="css/styles.css">
-          
-            <!-- Open Graph Meta (Sosyal Paylaşım) -->
-            <meta property="og:title" content="Bekir Kaplan - Yazılım Geliştirici">
-            <meta property="og:description" content="Yazılım geliştirme ve siber güvenlik.">
-            <meta property="og:image" content="https://tikzidev.com.tr/images/banner.png">
-            <meta property="og:url" content="https://tikzidev.com.tr">
-            <meta property="og:type" content="website">
-          
-            <!-- Twitter Card Meta -->
-            <meta name="twitter:card" content="summary_large_image">
-            <meta name="twitter:title" content="Bekir Kaplan - Yazılım Geliştirici">
-            <meta name="twitter:description" content="Yazılım geliştirme ve siber güvenlik.">
-            <meta name="twitter:image" content="https://tikzidev.com.tr/images/banner.png">
-          </head>
-          
-      </head>
-      
-      <!-- sayfanın en altında, </body> etiketinden hemen önce ekleyin: -->
-      <!-- AOS JS -->
-      <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-      <script>
-        AOS.init({
-          duration: 800,    // Animasyon süresi (ms)
-          once: true        // Bir kez animasyon göster, tekrar gösterme
-        });
-      </script>
-      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bekir Kaplan</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    
+    <link rel="manifest" href="/img/site.webmanifest">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#9370db">
+    <meta name="msapplication-TileColor" content="#9370db">
+    <meta name="theme-color" content="#121212">
 </head>
-
 <body>
 
-    <!-- Tanıtım Bölümü -->
-    <section id="tanitim">
-        <div class="profil">
-            <img src="iconprofil.png" alt="Bekir Kaplan">
-            <div class="bilgi">
-                <h1>Bekir Kaplan</h1>
-                <p>Database $ Server Yönetimi</p>
-                <div class="buttons">
-                    <a href="https://www.instagram.com/bxkir58/" class="button"><i class="fab fa-instagram"></i>İnstagram</a>
-                    <a href="https://github.com/TikziiBaba" class="button"><i class="fab fa-github"></i>GitHub</a>
-                    <a href="mailto:dedyusuf99@gmail.com" class="button"><i class="fas fa-envelope"></i>E-posta</a>
+    <div id="particles-js"></div>
+
+    <header>
+        <nav>
+            <a href="#hero" class="logo">BK</a> <ul>
+                <li><a href="#about">Hakkımda</a></li>
+                <li><a href="#projects">Projelerim</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <p class="subtitle">Merhaba, Bekir</p>
+                <h1 class="title-glitch" data-text="Adın Soyadın">Bekir Kaplan</h1>
+                <p class="description">
+                    <span class="typewriter"></span> </p>
+                <a href="#projects" class="cta-button">Çalışmalarımı Gör</a>
+            </div>
+        </section>
+
+        <section id="about" class="fade-in-section">
+            <h2>HAKKIMDA</h2>
+            <div class="about-content">
+                
+                <p>
+                    Hey, ben Bekir. Sivas'da yaşayan ve nefes alan her şeyi dijitalleştirmeye çalışan biriyim. Kodlarla konuşuyor, 
+                    tasarımlarla düşünüyorum. Amacım sadece fonksiyonel değil, aynı zamanda estetik ve "vay be!" dedirten işler çıkarmak.
+                    Temiz kod, akıcı animasyonlar ve anlamlı kullanıcı deneyimleri benim alanım. Sürekli gelişen bu evrende, 
+                    ben de durmaksızın gelişiyorum. Bir sonraki projenin kahramanı ben olabilir miyim? 
+                </p>
+            </div>
+        </section>
+
+        <section id="projects" class="fade-in-section">
+            <h2>PROJELERİM</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="img/proje1.png" alt="Proje 1 Görseli">
+                    <h3>tikzidev.online</h3>
+                    <p>Yakında.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/TikziiBaba/online" target="_blank"><i class="fab fa-github"></i> Kod</a>
+                        <a href="https://tikzidev.online" target="_blank"><i class="fas fa-external-link-alt"></i> Site</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/luckmcicon.png" alt="Proje 2 Görseli">
+                    <h3>LuckMC</h3>
+                    <p>Bir Minecraft sunucusundan daha fazlası</p>
+                    <div class="project-links">
+                        <a href="https://github.com/LewisLosa/luckmc-galeri" target="_blank"><i class="fab fa-github"></i> Kod</a>
+                        <a href="https://luckmc.net" target="_blank"><i class="fas fa-external-link-alt"></i> Site</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/proje3.png" alt="Proje 3 Görseli">
+                    <h3>ÖzYuvam Tesisleri</h3>
+                    <p>Yuvam düğün salonunda geliştirici olarak çalışıyorum.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/TikziiBaba/yuvam" target="_blank"><i class="fab fa-github"></i> Kod</a>
+                        <a href="https://ozyuvamtesisleri.com" target="_blank"><i class="fas fa-external-link-alt"></i> Site</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projeler" data-aos="fade-up">
-        <h2>Projelerim</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>bekirkaplan.online</h3>
-                <p>Kendi yaptığım bir uzaktan erişim aplikasyonu</p>
-                <a href="https://tikzidev.online" class="project-button" target="_blank">Projeyi incele :)</a>
+        <section id="contact" class="fade-in-section">
+            <h2>İLETİŞİM</h2>
+            <p>Bir proje fikriniz mi var veya sadece merhaba mı demek istiyorsunuz? Bana ulaşın!</p>
+            <div class="social-links">
+                <a href="mailto:dedyusuf99@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/TikziiBaba/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/bekir-kaplan-647380371/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
-            <div class="project-card">
-                <h3>bekirkaplan.xyz</h3>
-                <p>YAKINDA!!!</p>
-                <a href="https://tikzidev.xyz" class="project-button" target="_blank">Projeyi incele :)</a>
+        </section>
+    </main>
+
+    <div class="footer-container">
+        <div class="wave-container">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(147,112,219,0.7)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(147,112,219,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(147,112,219,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#1a1a1a" />
+                </g>
+            </svg>
+        </div>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section footer-logo-area">
+                    <a href="#hero" class="logo">Bekir K.</a> <p>Fikirleri dijital deneyimlere dönüştürmek.</p>
+                </div>
+                <div class="footer-section footer-links">
+                    <h4>Hızlı Menü</h4>
+                    <ul>
+                        <li><a href="#about">Hakkımda</a></li>
+                        <li><a href="#projects">Projelerim</a></li>
+                        <li><a href="#contact">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-social">
+                    <h4>Takip Et</h4>
+                    <div class="social-links-footer">
+                        <a href="https://github.com/kullaniciadin" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/kullaniciadin" target="_blank"aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/kullaniciadin" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    
-
-
-    <!-- Hakkımda ve Yetenekler Bölümü -->
-    <section id="bilgiler">
-        <div class="hakkimda">
-            <h2>Hakkımda🧑‍💻</h2>
-            <p>Merhaba! Ben <strong>Bekir</strong>, Almanya'nın Backnang şehrinde doğdum ve şu an bir lise öğrencisiyim. Günümün büyük bir kısmını yazılım yaparak ve oyun oynayarak geçiririm. Çok fazla sosyalleşmeyi sevmem, daha çok bilgisayarımda vakit geçiririm. Bir de domates çorbası ve kuşları çok severim.</p>
-
-            <div class="buttons">
-                <a href="galeri.html" class="button"><i class="fas fa-images"></i> Galeri</a>
-                <a href="https://open.spotify.com/user/31qvmdwqj23vb6kz47ienmmcsh4y" class="button" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
-                <a href="https://donate.bynogame.com/bekirdev" class="button" target="_blank"><i class="fas fa-donate"></i> Donate</a>
-                <!-- Yeni Paint Butonu Eklendi -->
-                
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bekir Kaplan. Tüm hakları saklıdır. Bu Site Bekir Kaplan Tarafından Tasarlanmıştır</p>
             </div>
-        </div>
-
-        <div class="yetenekler">
-            <h2>Yetenekler🔥</h2>
-            <ul>
-                <li><i class="fab fa-python" style="color: #FFD43B;"></i> Python</li>
-                <li><i class="fas fa-database" style="color: #4DB33D;"></i> SQL</li>
-                <li><i class="fab fa-html5" style="color: #E34F26;"></i> HTML</li>
-                <li><i class="fab fa-css3-alt" style="color: #1572B6;"></i> CSS</li>
-                <li><i class="fab fa-js-square" style="color: #F7DF1E;"></i> JavaScript</li>
-                <li><i class="fas fa-code" style="color: #00599C;"></i> C++</li>
-                <li><i class="fab fa-linux" style="color: #FCC624;"></i> Linux</li>
-                <li><i class="fab fa-git-alt" style="color: #F1502F;"></i> Git</li>
-                <li><i class="fab fa-linux" style="color: #1793D1;"></i> Arch Linux</li>
-                <li><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Photoshop" style="width:20px; vertical-align:middle; margin-right:8px;"> Adobe Photoshop Beginner</li>
-
-            </ul>
-        
-            <div class="buttons buttons-yetenekler">
-                <button class="button" onclick="basarimGoster()"><i class="fas fa-trophy"></i> Başarım!</button>
-                <a href="paint.html" class="button"><i class="fas fa-paint-brush"></i> Paint</a>
-            </div>
-        </div>
-        
-    </section>
-
-    <!-- Minecraft Başarım Bildirimi -->
-    <div id="basarim-bildirimi" class="basarim-gizle">
-        <img src="images/achievement.png" alt="Minecraft Başarım">
-        <div>
-            <p>Başarım Kazanıldı!</p>
-        </div>
+        </footer>
     </div>
 
-    <audio id="basarim-sesi">
-        <source src="images/achievement.mp3" type="audio/mpeg">
-    </audio>
-
-    <script>
-        function basarimGoster() {
-            const basarim = document.getElementById('basarim-bildirimi');
-            const ses = document.getElementById('basarim-sesi');
-
-            // Ses Efektini Çal
-            ses.play();
-
-            // Bildirimi Göster
-            basarim.classList.remove('basarim-gizle');
-            basarim.classList.add('basarim-goster');
-
-            // 4 saniye sonra bildirimi gizle
-            setTimeout(() => {
-                basarim.classList.remove('basarim-goster');
-                basarim.classList.add('basarim-gizle');
-            }, 4000);
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
