@@ -1,10 +1,30 @@
-/* Genel Ayarlar ve Değişkenler */
+/* ----------------------------------------- */
+/* 1. GENEL AYARLAR VE DEĞİŞKENLER            */
+/* ----------------------------------------- */
 :root {
-    --primary-color: #9370DB; /* Ana Renk - Orta Mor */
-    --secondary-color: #4B0082; /* İkincil Renk - Koyu İndigo */
-    --background-color: #121212; /* Arka Plan Rengi */
+    /* Varsayılan Tema: Karanlık Mod */
+    --primary-color: #9370DB;
+    --glow-color: rgba(147, 112, 219, 0.5);
+    --background-color: #121212;
+    --surface-color: #1E1E1E; /* Kartlar ve diğer yüzeyler için */
     --text-color: #EAEAEA;
-    --glow-color: rgba(147, 112, 219, 0.8);
+    --text-secondary-color: #AAAAAA;
+    --border-color: #333333;
+    --header-bg: rgba(18, 18, 18, 0.5);
+    --wave-color: #1E1E1E;
+}
+
+body.light-mode {
+    /* Aydınlık Mod Değişkenleri */
+    --primary-color: #6A5ACD;
+    --glow-color: rgba(106, 90, 205, 0.4);
+    --background-color: #F5F5F7;
+    --surface-color: #FFFFFF;
+    --text-color: #1D1D1F;
+    --text-secondary-color: #555555;
+    --border-color: #DDDDDD;
+    --header-bg: rgba(255, 255, 255, 0.5);
+    --wave-color: #FFFFFF;
 }
 
 * {
@@ -22,9 +42,204 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hareketli Arka Plan */
+/* ----------------------------------------- */
+/* 2. TEKRAR KULLANILAN BİLEŞENLER           */
+/* ----------------------------------------- */
+
+/* CTA (Call to Action) Butonu */
+.cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px var(--glow-color);
+}
+
+.cta-button:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
+    transform: translateY(-5px);
+}
+
+/* Kaydırma ile Gelen Bölüm Animasyonu */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ----------------------------------------- */
+/* 1. GENEL AYARLAR VE DEĞİŞKENLER            */
+/* ----------------------------------------- */
+:root {
+    /* Varsayılan Tema: Karanlık Mod */
+    --primary-color: #9370DB;
+    --glow-color: rgba(147, 112, 219, 0.5);
+    --background-color: #121212;
+    --surface-color: #1E1E1E;
+    --text-color: #EAEAEA;
+    --text-secondary-color: #AAAAAA;
+    --border-color: #333333;
+    --header-bg: rgba(18, 18, 18, 0.5);
+    --wave-bottom-fill: #1E1E1E;
+}
+
+body.light-mode {
+    /* Aydınlık Mod Değişkenleri */
+    --primary-color: #6A5ACD;
+    --glow-color: rgba(106, 90, 205, 0.4);
+    --background-color: #F5F5F7;
+    --surface-color: #FFFFFF;
+    --text-color: #1D1D1F;
+    --text-secondary-color: #555555;
+    --border-color: #E5E5E7;
+    --header-bg: rgba(255, 255, 255, 0.5);
+    --wave-bottom-fill: #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+strong, b {
+    font-weight: 700; /* Kalın yazıların her zaman kalın görünmesini garantiler */
+}
+
+/* ----------------------------------------- */
+/* 2. HEADER VE KONTROL DÜĞMELERİ            */
+/* ----------------------------------------- */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1.5rem 5%;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 1px solid transparent;
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+body.light-mode header {
+    border-color: var(--border-color);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+.theme-switcher {
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    color: var(--text-color);
+}
+.theme-switcher .fa-sun { display: none; }
+.theme-switcher .fa-moon { display: block; }
+
+body.light-mode .theme-switcher .fa-sun { display: block; }
+body.light-mode .theme-switcher .fa-moon { display: none; }
+
+.language-switcher {
+    display: flex;
+    gap: 0.5rem;
+}
+.language-switcher button {
+    background: transparent;
+    border: 1px solid var(--text-secondary-color);
+    color: var(--text-secondary-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.language-switcher button.active {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+nav ul { list-style: none; display: flex; }
+nav ul li { margin-left: 2rem; }
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+nav a:hover { color: var(--primary-color); text-shadow: 0 0 8px var(--glow-color); }
+
+/* Diğer tüm bölümlerin CSS kodları buraya, önceki yanıttaki gibi... */
+/* Lütfen bir önceki yanıttaki CSS kodunun Geri Kalanını buraya yapıştırın. */
+/* Bu, yanıtın çok uzun olmasını engellemek içindir. */
+
+/* Footer Dalga Efekti Rengini Değişkenle Ayarlama */
+.wave-bottom {
+    fill: var(--wave-bottom-fill);
+    transition: fill 0.4s ease;
+}
+
+@keyframes move-forever {
+    0% { transform: translate3d(-90px,0,0); }
+    100% { transform: translate3d(85px,0,0); }
+}
+
+/* Diğer tüm footer ve responsive CSS kodları buraya... */
+/* Lütfen bir önceki yanıttaki CSS kodunun Geri Kalanını buraya yapıştırın. */
+
+
+/* ----------------------------------------- */
+/* 3. SAYFA YAPISI VE BÖLÜMLER               */
+/* ----------------------------------------- */
+
 #particles-js {
     position: fixed;
     width: 100%;
@@ -41,12 +256,13 @@ header {
     top: 0;
     left: 0;
     padding: 1.5rem 5%;
-    background: rgba(18, 18, 18, 0.5);
+    background: var(--header-bg);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    transition: background-color 0.3s ease;
 }
 
 .logo {
@@ -56,6 +272,48 @@ header {
     text-decoration: none;
     text-shadow: 0 0 10px var(--glow-color);
 }
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Tema Değiştirme Düğmesi */
+.theme-switcher {
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    color: var(--text-color);
+}
+.theme-switcher .fa-sun { display: none; }
+.theme-switcher .fa-moon { display: block; }
+
+body.light-mode .theme-switcher .fa-sun { display: block; }
+body.light-mode .theme-switcher .fa-moon { display: none; }
+
+/* Dil Değiştirme Düğmeleri */
+.language-switcher {
+    display: flex;
+    gap: 0.5rem;
+}
+.language-switcher button {
+    background: transparent;
+    border: 1px solid var(--text-secondary-color);
+    color: var(--text-secondary-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.language-switcher button.active {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
 
 nav ul {
     list-style: none;
@@ -96,17 +354,13 @@ h2 {
     text-shadow: 0 0 15px var(--glow-color);
 }
 
-/* Hero Bölümü */
-#hero {
-    text-align: center;
-}
-
-.hero-content .subtitle {
+/* Hero (Ana Karşılama) Bölümü */
+#hero .subtitle {
     font-size: 1.5rem;
     font-weight: 300;
 }
 
-.hero-content .title-glitch {
+#hero .title-glitch {
     font-size: 4rem;
     font-weight: 700;
     color: var(--primary-color);
@@ -114,13 +368,12 @@ h2 {
     text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 40px var(--glow-color);
 }
 
-.hero-content .description {
+#hero .description {
     font-size: 1.8rem;
     font-weight: 400;
-    height: 40px; /* Yazı animasyonu için sabit yükseklik */
+    height: 40px; 
 }
 
-/* Yazı Animasyonu (Typewriter) İmleci */
 .typewriter::after {
     content: '|';
     animation: blink 0.7s infinite;
@@ -131,53 +384,18 @@ h2 {
     50% { opacity: 0; }
 }
 
-/* CTA Butonu */
-.cta-button {
-    display: inline-block;
-    margin-top: 2rem;
-    padding: 1rem 2.5rem;
-    background: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px var(--glow-color);
-}
-
-.cta-button:hover {
-    background: var(--primary-color);
-    color: var(--background-color);
-    box-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
-    transform: translateY(-5px);
-}
-
-
 /* Hakkımda Bölümü */
 .about-content {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
     max-width: 900px;
 }
 
-.profile-pic {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--primary-color);
-    box-shadow: 0 0 25px var(--glow-color);
-}
-
 .about-content p {
-    text-align: left;
+    text-align: center;
     font-size: 1.1rem;
     line-height: 1.8;
 }
 
-/* Projeler Bölümü */
+/* Projelerim Bölümü */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -186,17 +404,38 @@ h2 {
 }
 
 .project-card {
-    background: #1a1a1a;
+    background: var(--surface-color);
     border-radius: 15px;
-    overflow: hidden;
     text-align: left;
-    border: 1px solid #333;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+    position: relative; 
+    overflow: hidden; 
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 25px rgba(147, 112, 219, 0.5);
+    transform: translateY(-5px);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        250px circle at var(--mouse-x) var(--mouse-y),
+        rgba(147, 112, 219, 0.4),
+        transparent 80%
+    );
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover::before {
+    opacity: 1;
 }
 
 .project-card img {
@@ -214,6 +453,7 @@ h2 {
     padding: 0 1.5rem 1rem;
     font-size: 0.9rem;
     line-height: 1.6;
+    color: var(--text-secondary-color);
 }
 
 .project-links {
@@ -233,8 +473,81 @@ h2 {
     color: var(--primary-color);
 }
 
-.project-links a i {
-    margin-right: 0.5rem;
+/* Galeri Yönlendirme Bölümü */
+#gallery-cta {
+    background: rgba(0, 0, 0, 0.2); 
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    min-height: auto;
+    padding: 80px 10%;
+}
+
+body.light-mode #gallery-cta {
+    background: rgba(0, 0, 0, 0.03); 
+}
+
+#gallery-cta p {
+    max-width: 600px;
+    margin: 1rem 0 2rem 0;
+    line-height: 1.8;
+}
+
+/* Setup Bölümü */
+#setup {
+    background-color: var(--background-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239370DB' fill-opacity='0.08'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    transition: background-color 0.3s ease;
+}
+
+.setup-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap; 
+    margin-top: 2rem;
+}
+
+.setup-image, .setup-description {
+    flex: 1; 
+    min-width: 320px;
+}
+
+.setup-image img {
+    width: 100%;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+}
+
+.setup-description { text-align: left; }
+.setup-description h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px var(--glow-color);
+}
+.setup-description p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+.setup-description ul {
+    list-style: none;
+    padding-left: 0;
+}
+.setup-description ul li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.setup-description ul li::before {
+    content: '\f105';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 5px;
 }
 
 /* İletişim Bölümü */
@@ -243,25 +556,28 @@ h2 {
     font-size: 1.2rem;
 }
 
-.social-links a {
+#contact .social-links a {
     color: var(--text-color);
     font-size: 2.5rem;
     margin: 0 1.5rem;
     transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
 }
-
-.social-links a:hover {
+#contact .social-links a:hover {
     color: var(--primary-color);
     transform: scale(1.2);
     text-shadow: 0 0 15px var(--glow-color);
 }
 
+/* ----------------------------------------- */
+/* 4. FOOTER (ALT BİLGİ) VE DALGA EFEKTİ     */
+/* ----------------------------------------- */
 .footer-container {
     position: relative;
-    background-color: #1a1a1a;
+    background-color: var(--surface-color);
     width: 100%;
     text-align: center;
     color: var(--text-color);
+    transition: background-color 0.3s ease;
 }
 
 .wave-container {
@@ -270,53 +586,44 @@ h2 {
     min-height: 100px;
     max-height: 150px;
     position: relative;
-    /* Footer'ın arka plan rengiyle uyumlu olmalı */
     background-color: var(--background-color); 
+    transition: background-color 0.3s ease;
 }
 
 .waves {
     position:absolute;
-    bottom: -1px; /* Kenarda boşluk kalmaması için */
+    bottom: -1px;
     left: 0;
     width: 100%;
     height:15vh;
     min-height: 100px;
     max-height: 150px;
 }
+.wave-container use {
+    transition: fill 0.3s ease;
+}
+body.light-mode .wave-container use:last-child {
+    fill: var(--surface-color);
+}
+
 
 .parallax > use {
     animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
 }
-.parallax > use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
-}
-.parallax > use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-}
-.parallax > use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-}
-.parallax > use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
-}
+.parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
+.parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+.parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+.parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
 
-/* Dalga Animasyonu */
 @keyframes move-forever {
-    0% {
-        transform: translate3d(-90px,0,0);
-    }
-    100% { 
-        transform: translate3d(85px,0,0);
-    }
+    0% { transform: translate3d(-90px,0,0); }
+    100% { transform: translate3d(85px,0,0); }
 }
 
 footer {
     padding: 2rem 5% 1rem 5%;
-    background-color: #1a1a1a;
+    background-color: var(--surface-color);
+    transition: background-color 0.3s ease;
 }
 
 .footer-content {
@@ -329,22 +636,8 @@ footer {
     text-align: left;
 }
 
-.footer-section {
-    flex: 1;
-    min-width: 220px;
-}
-
-.footer-logo-area .logo {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.footer-logo-area p {
-    color: #aaa;
-    font-size: 0.9rem;
-}
-
+.footer-section { flex: 1; min-width: 220px; }
+.footer-logo-area p { color: var(--text-secondary-color); font-size: 0.9rem; }
 .footer-section h4 {
     font-size: 1.2rem;
     color: var(--primary-color);
@@ -353,35 +646,16 @@ footer {
     letter-spacing: 1px;
 }
 
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links ul li {
-    margin-bottom: 0.75rem;
-}
-
+.footer-links ul { list-style: none; }
+.footer-links ul li { margin-bottom: 0.75rem; }
 .footer-links a {
     color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s, padding-left 0.3s;
 }
-
 .footer-links a:hover {
     color: var(--primary-color);
     padding-left: 5px;
-}
-
-.social-links-footer a {
-    color: var(--text-color);
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.social-links-footer a:hover {
-    color: var(--primary-color);
-    transform: scale(1.1);
 }
 
 .footer-bottom {
@@ -389,81 +663,24 @@ footer {
     padding-top: 1.5rem;
     text-align: center;
     font-size: 0.9rem;
-    color: #aaa;
+    color: var(--text-secondary-color);
 }
-
 
 .footer-credit-link {
-    color: inherit; /* Rengi, içinde bulunduğu paragrafın rengiyle aynı olsun */
-    text-decoration: none; /* Linkin altındaki çizgiyi kaldır */
-    cursor: pointer; /* Üzerine gelince tıklanabilir olduğunu göster */
-}
-
-/* Linkin üzerine gelindiğinde de stilinin değişmemesini sağlıyoruz */
-.footer-credit-link:hover {
-    color: inherit; 
+    color: inherit;
     text-decoration: none;
+    cursor: pointer;
 }
+.footer-credit-link:hover { color: inherit; text-decoration: none; }
 
-/* Responsive ayar */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .footer-section {
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-    .footer-section h4 {
-        margin-top: 1rem;
-    }
-}
-
-/* Kaydırma Animasyonu */
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Mobil Cihazlar için Duyarlılık */
-@media (max-width: 768px) {
-    h2 { font-size: 2rem; }
-    
-    header { padding: 1rem 5%; }
-    nav ul { display: none; } /* Veya bir hamburger menü ekleyebilirsiniz */
-
-    #hero { padding-top: 100px; }
-    .hero-content .title-glitch { font-size: 2.5rem; }
-    .hero-content .description { font-size: 1.2rem; height: 30px; }
-
-    .about-content {
-        flex-direction: column;
-    }
-
-    .profile-pic {
-        width: 150px;
-        height: 150px;
-    }
-}
 /* ----------------------------------------- */
-/* YENİ GALERİ SAYFASI STİLLERİ (MOZAİK) */
+/* 5. GALERİ SAYFASI STİLLERİ (GALERI.HTML)  */
 /* ----------------------------------------- */
-
 .gallery-grid {
     display: grid;
-    /* 5 sütunlu bir grid oluştur, her birim 1fr (eşit) olsun */
     grid-template-columns: repeat(5, 1fr); 
-    /* Resimlerin otomatik olarak satır yüksekliğini ayarlamasını sağlar */
     grid-auto-rows: 250px; 
-    grid-auto-flow: dense; /* Boşlukları doldurmak için */
+    grid-auto-flow: dense;
     gap: 1rem;
     width: 100%;
     margin-top: 2rem;
@@ -472,6 +689,7 @@ footer {
 .gallery-item {
     overflow: hidden;
     border-radius: 15px;
+    border: 1px solid var(--border-color);
 }
 
 .gallery-item img {
@@ -486,99 +704,48 @@ footer {
     filter: brightness(1.1);
 }
 
-/* Mozaik Efekti için bazı resimleri büyütelim */
+.gallery-item:nth-child(10n + 1) { grid-column: span 2; }
+.gallery-item:nth-child(10n + 5) { grid-column: span 2; grid-row: span 2; }
+.gallery-item:nth-child(10n + 7) { grid-row: span 2; }
 
-/* Her 10. resim yatayda 2 birim yer kaplasın */
-.gallery-item:nth-child(10n + 1) {
-    grid-column: span 2;
-}
 
-/* Her 10. resimden sonraki 5. resim (yani 5, 15, 25...) hem yatayda hem dikeyde 2 birim yer kaplasın (Büyük Kare) */
-.gallery-item:nth-child(10n + 5) {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-/* Her 10. resimden sonraki 7. resim (yani 7, 17, 27...) dikeyde 2 birim yer kaplasın (Dikey Dikdörtgen) */
-.gallery-item:nth-child(10n + 7) {
-    grid-row: span 2;
-}
-
-/* Mobil cihazlar için grid'i basitleştirelim */
+/* ----------------------------------------- */
+/* 6. RESPONSIVE AYARLAR (MOBİL UYUMLULUK)   */
+/* ----------------------------------------- */
 @media (max-width: 768px) {
+    h2 { font-size: 2rem; }
+    header { padding: 1rem 5%; }
+    
+    /* Mobil için Navigasyon ve Kontroller */
+    nav ul { display: none; }
+    .header-controls {
+        position: absolute;
+        right: 1.5rem;
+    }
+    
+    #hero { padding-top: 100px; }
+    #hero .title-glitch { font-size: 2.5rem; }
+    #hero .description { font-size: 1.2rem; height: 30px; }
+    
+    .about-content { flex-direction: column; }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-section {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .footer-section h4 { margin-top: 1rem; }
+    
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* Mobilde 2 sütun */
+        grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: 200px;
     }
-    /* Mobilde mozaik efektini iptal edelim, tüm resimler eşit olsun */
     .gallery-item:nth-child(n) {
         grid-column: span 1;
         grid-row: span 1;
     }
-}
-
-
-#setup {
-    background-color: #121212; /* Ana arkaplan rengi */
-   
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239370DB' fill-opacity='0.08'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-.setup-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap; /* Mobilde alt alta geçmesi için */
-    margin-top: 2rem;
-}
-
-.setup-image,
-.setup-description {
-    flex: 1; /* Eşit alan kaplamalarını sağlar */
-    min-width: 320px; /* Minimum genişlik */
-}
-
-.setup-image img {
-    width: 100%;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.05); /* Arkaplanı transparan olan çizim için hafif bir zemin */
-    padding: 1rem;
-}
-
-.setup-description {
-    text-align: left;
-}
-
-.setup-description h3 {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    text-shadow: 0 0 10px var(--glow-color);
-}
-
-.setup-description p {
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-}
-
-.setup-description ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.setup-description ul li {
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-/* Liste elemanlarının başına sitenin ana renginde bir ikon ekleyelim */
-.setup-description ul li::before {
-    content: '\f105'; /* Font Awesome > ikonu */
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    color: var(--primary-color);
-    position: absolute;
-    left: 0;
-    top: 5px;
 }
