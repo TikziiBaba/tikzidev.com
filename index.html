@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bekodev</title>
+    <title data-key="title">Bekodev</title>
     
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,16 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-    
-    <link rel="manifest" href="/img/site.webmanifest">
-    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#9370db">
-    <meta name="msapplication-TileColor" content="#9370db">
-    <meta name="theme-color" content="#121212">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
 </head>
 <body>
 
@@ -28,12 +23,25 @@
 
     <header>
         <nav>
-            <a href="#hero" class="logo">Beko</a> <ul>
-                <li><a href="#about">Hakkımda</a></li>
-                <li><a href="#projects">Projelerim</a></li>
-                <li><a href="#gallery-cta">Galeri</a></li>
-                <li><a href="#setup">My Setup</a></li>
-                <li><a href="#contact">İletişim</a></li>
+            <a href="#hero" class="logo">Beko</a>
+            
+            <div class="header-controls">
+                <div class="theme-switcher">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="language-switcher">
+                    <button data-lang="tr" class="active">TR</button>
+                    <button data-lang="en">EN</button>
+                </div>
+            </div>
+
+            <ul>
+                <li><a href="#about" data-key="nav_about">Hakkımda</a></li>
+                <li><a href="#projects" data-key="nav_projects">Projelerim</a></li>
+                <li><a href="#gallery-cta" data-key="nav_gallery">Galeri</a></li>
+                <li><a href="#setup" data-key="nav_setup">Setup'ım</a></li>
+                <li><a href="#contact" data-key="nav_contact">İletişim</a></li>
             </ul>
         </nav>
     </header>
@@ -41,108 +49,95 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <p class="subtitle">Merhaba</p>
-                <h1 class="title-glitch" data-text="Adın Soyadın">Bekir Kaplan</h1>
-                <p class="description">
-                    <span class="typewriter"></span> </p>
-                <a href="#about" class="cta-button">Gezintiye Başla</a>
+                <p class="subtitle" data-key="hero_greeting">Merhaba, ben</p>
+                <h1 class="title-glitch" data-key="hero_name">Bekir Kaplan</h1>
+                <p class="description" data-texts-key="hero_description">
+                    <span class="typewriter"></span>
+                </p>
+                <a href="#about" class="cta-button" data-key="hero_button">Gezintiye Başla</a>
             </div>
         </section>
 
         <section id="about" class="fade-in-section">
-            <h2>HAKKIMDA</h2>
+            <h2 data-key="about_title">HAKKIMDA</h2>
             <div class="about-content">
-                
-                <p>
-                    Hey, ben Bekir. Sivas'da yaşayan ve nefes alan her şeyi dijitalleştirmeye çalışan biriyim. Kodlarla konuşuyor, 
-                    tasarımlarla düşünüyorum. Amacım sadece fonksiyonel değil, aynı zamanda estetik ve "vay be!" dedirten işler çıkarmak.
-                    Temiz kod, akıcı animasyonlar ve anlamlı kullanıcı deneyimleri benim alanım. Sürekli gelişen bu evrende, 
-                    ben de durmaksızın gelişiyorum. Bir sonraki projenin kahramanı ben olabilir miyim? 
+                <p data-key="about_text">
+                    Hey, ben Bekir. Sivas'da yaşayan ve nefes alan her şeyi dijitalleştirmeye çalışan biriyim. Kodlarla konuşuyor, tasarımlarla düşünüyorum. Amacım sadece fonksiyonel değil, aynı zamanda estetik ve "vay be!" dedirten işler çıkarmak. Temiz kod, akıcı animasyonlar ve anlamlı kullanıcı deneyimleri benim alanım. Sürekli gelişen bu evrende, ben de durmaksızın gelişiyorum.
                 </p>
             </div>
         </section>
 
         <section id="projects" class="fade-in-section">
-            <h2>PROJELERİM</h2>
+            <h2 data-key="projects_title">PROJELERİM</h2>
             <div class="project-grid">
                 <div class="project-card">
                     <img src="img/proje1.png" alt="Proje 1 Görseli">
-                    <h3>tikzidev.online</h3>
-                    <p>Yakında.</p>
+                    <h3 data-key="project1_title">tikzidev.online</h3>
+                    <p data-key="project1_desc">Kişisel web sitem ve blog platformum.</p>
                     <div class="project-links">
-                        <a href="https://github.com/TikziiBaba/online" target="_blank"><i class="fab fa-github"></i> Kod</a>
-                        <a href="https://tikzidev.online" target="_blank"><i class="fas fa-external-link-alt"></i> Site</a>
+                        <a href="https://github.com/TikziiBaba/online" target="_blank"><i class="fab fa-github"></i> <span data-key="project_code_link">Kod</span></a>
+                        <a href="https://tikzidev.online" target="_blank"><i class="fas fa-external-link-alt"></i> <span data-key="project_site_link">Site</span></a>
                     </div>
                 </div>
                 <div class="project-card">
                     <img src="img/luckmcicon.png" alt="Proje 2 Görseli">
-                    <h3>LuckMC</h3>
-                    <p>Bir Minecraft sunucusundan daha fazlası</p>
+                    <h3 data-key="project2_title">LuckMC</h3>
+                    <p data-key="project2_desc">Bir Minecraft sunucusundan daha fazlası.</p>
                     <div class="project-links">
-                        <a href="https://github.com/LewisLosa/luckmc-galeri" target="_blank"><i class="fab fa-github"></i> Kod</a>
-                        <a href="https://luckmc.net" target="_blank"><i class="fas fa-external-link-alt"></i> Site</a>
+                        <a href="https://github.com/LewisLosa/luckmc-galeri" target="_blank"><i class="fab fa-github"></i> <span data-key="project_code_link">Kod</span></a>
+                        <a href="https://luckmc.net" target="_blank"><i class="fas fa-external-link-alt"></i> <span data-key="project_site_link">Site</span></a>
                     </div>
                 </div>
                 <div class="project-card">
                     <img src="img/proje3.png" alt="Proje 3 Görseli">
-                    <h3>Özger</h3>
-                    <p>GYM Fizyoterapi Pilates Üye Kayıt Ve Randevu Sistemi.</p>
+                    <h3 data-key="project3_title">Özger Yaşam</h3>
+                    <p data-key="project3_desc">GYM & Fizyoterapi üye ve randevu sistemi.</p>
                     <div class="project-links">
-                        <a href="https://www.instagram.com/sivas.ozgeryasam/" target="_blank"><i class="fas fa-external-link-alt"></i> Site</a>
+                        <a href="https://www.instagram.com/sivas.ozgeryasam/" target="_blank"><i class="fas fa-external-link-alt"></i> <span data-key="project_site_link">Site</span></a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="gallery-cta" class="fade-in-section">
-            <h2>Görsel Bir Yolculuk</h2>
-            <p>
-                Kodların ve tasarımların ötesinde, projelere hayat veren anları ve görsel detayları keşfedin.
-                <br>
-                Daha fazlası için galerime göz atın.
+            <h2 data-key="gallery_cta_title">Görsel Bir Yolculuk</h2>
+            <p data-key="gallery_cta_text">
+                Kodların ve tasarımların ötesinde, projelere hayat veren anları ve görsel detayları keşfedin. Daha fazlası için galerime göz atın.
             </p>
-            <a href="galeri.html" class="cta-button">Galeriyi Keşfet</a>
+            <a href="galeri.html" class="cta-button" data-key="gallery_cta_button">Galeriyi Keşfet</a>
         </section>
 
         <section id="setup" class="fade-in-section">
-            <h2>Çalışma Alanım</h2>
+            <h2 data-key="setup_title">Çalışma Alanım</h2>
             <div class="setup-content">
                 <div class="setup-image">
                     <img src="img/setup.png" alt="Çalışma Alanı İllüstrasyonu">
                 </div>
                 <div class="setup-description">
-                    <h3>Fikirlerin Hayata Geçtiği Yer</h3>
-                    <p>
-                        Burası benim dijital dünyadaki üssüm. Projelerimi geliştirdiğim, yeni şeyler öğrendiğim ve 
-                        bazen de oyunlarda stres attığım kişisel alanım. Her parçası, verimlilik ve konforu 
-                        bir araya getirmek için özenle seçildi.
+                    <h3 data-key="setup_subtitle">Fikirlerin Hayata Geçtiği Yer</h3>
+                    <p data-key="setup_text">
+                        Burası benim dijital dünyadaki üssüm. Projelerimi geliştirdiğim, yeni şeyler öğrendiğim ve bazen de oyunlarda stres attığım kişisel alanım. Her parçası, verimlilik ve konforu bir araya getirmek için özenle seçildi.
                     </p>
                     <ul>
-                        <li><strong>Laptop:</strong> Gün boyu bana eşlik eden, mor ışıklarıyla geceleri aydınlatan canavar.</li>
-                        <li><strong>Klavye:</strong> Kablosuz özgürlüğüyle masama ferahlık katan, her tuşuna basmanın keyif verdiği mekanik klavyem.</li>
-                        <li><strong>Mouse & Mousepad:</strong> Geniş dalgalı mousepad üzerinde kablosuz bir şekilde süzülen beyaz savaşçım.</li>
-                        <li><strong>Kulaklık:</strong> Dış dünyadan soyutlanıp koda odaklanmamı sağlayan sarı detaylı yol arkadaşım.</li>
-                        <li><strong>Gamepadler:</strong> Kodlamaya ara verdiğimde en iyi kaçış noktalarım.</li>
+                        <li data-key="setup_item1"><strong>Laptop:</strong> Gün boyu bana eşlik eden, mor ışıklarıyla geceleri aydınlatan canavar.</li>
+                        <li data-key="setup_item2"><strong>Klavye:</strong> Kablosuz özgürlüğüyle masama ferahlık katan, her tuşuna basmanın keyif verdiği mekanik klavyem.</li>
+                        <li data-key="setup_item3"><strong>Mouse & Mousepad:</strong> Geniş dalgalı mousepad üzerinde kablosuz bir şekilde süzülen beyaz savaşçım.</li>
+                        <li data-key="setup_item4"><strong>Kulaklık:</strong> Dış dünyadan soyutlanıp koda odaklanmamı sağlayan sarı detaylı yol arkadaşım.</li>
+                        <li data-key="setup_item5"><strong>Gamepadler:</strong> Kodlamaya ara verdiğimde en iyi kaçış noktalarım.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="fade-in-section">
-            <h2>İLETİŞİM</h2>
-            <p>Bir proje fikriniz mi var veya sadece merhaba mı demek istiyorsunuz? Bana ulaşın!</p>
+            <h2 data-key="contact_title">İLETİŞİM</h2>
+            <p data-key="contact_text">Bir proje fikriniz mi var veya sadece merhaba mı demek istiyorsunuz? Bana ulaşın!</p>
             <div class="social-links">
-                
                 <a href="mailto:dedyusuf99@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                
                 <a href="tel:+905456458416" aria-label="Telefon"><i class="fas fa-phone"></i></a>
-                
                 <a href="https://www.linkedin.com/in/bekir-kaplan-647380371/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                
                 <a href="https://github.com/TikziiBaba/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                
                 <a href="https://instagram.com/bxkir58" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                
             </div>
         </section>
     </main>
@@ -151,32 +146,31 @@
         <div class="wave-container">
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                <defs>
-                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                </defs>
+                <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /></defs>
                 <g class="parallax">
-                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(147,112,219,0.7)" />
-                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(147,112,219,0.5)" />
-                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(147,112,219,0.3)" />
-                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#1a1a1a" />
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(147,112,219,0.7)"></use>
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(147,112,219,0.5)"></use>
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(147,112,219,0.3)"></use>
+                    <use xlink:href="#gentle-wave" x="48" y="7" class="wave-bottom"></use>
                 </g>
             </svg>
         </div>
         <footer>
             <div class="footer-content">
                 <div class="footer-section footer-logo-area">
-                    <a href="#hero" class="logo">Bekir K.</a> <p>Fikirleri dijital deneyimlere dönüştürmek.</p>
+                    <a href="#hero" class="logo">Bekir K.</a>
+                    <p data-key="footer_subtitle">Fikirleri dijital deneyimlere dönüştürmek.</p>
                 </div>
                 <div class="footer-section footer-links">
-                    <h4>Hızlı Menü</h4>
+                    <h4 data-key="footer_nav_title">Hızlı Menü</h4>
                     <ul>
-                        <li><a href="#about">Hakkımda</a></li>
-                        <li><a href="#projects">Projelerim</a></li>
-                        <li><a href="#contact">İletişim</a></li>
+                        <li><a href="#about" data-key="nav_about">Hakkımda</a></li>
+                        <li><a href="#projects" data-key="nav_projects">Projelerim</a></li>
+                        <li><a href="#contact" data-key="nav_contact">İletişim</a></li>
                     </ul>
                 </div>
                 <div class="footer-section footer-social">
-                    <h4>Takip Et</h4>
+                    <h4 data-key="footer_social_title">Takip Et</h4>
                     <div class="social-links-footer">
                         <a href="https://github.com/TikziiBaba/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/bekir-kaplan-647380371/" target="_blank"aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -185,9 +179,9 @@
             </div>
             <div class="footer-bottom">
                 <p>
-                    &copy; 2025 Bekir Kaplan. Tüm hakları saklıdır. Bu Site 
+                    <span data-key="footer_copyright">&copy; 2025 Bekir Kaplan. Tüm hakları saklıdır. Bu Site </span>
                     <a href="https://www.instagram.com/bxkir58/" target="_blank" class="footer-credit-link">Bekodev</a> 
-                    Tarafından Tasarlanmıştır
+                    <span data-key="footer_designed_by"> Tarafından Tasarlanmıştır</span>
                 </p>
             </div>
         </footer>
